@@ -38,7 +38,7 @@ alter table event modify column evno int not null auto_increment;
 
 alter table event add constraint fk_etpno foreign key(etpno) references event_template(etpno);
 
-alter table event add constraint fk_bno foreign key(bno) references branch(bno);
+alter table event add constraint fk_ebno foreign key(bno) references branch(bno);
 
 -- event_file
 alter table event_file add primary key(efno);
