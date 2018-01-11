@@ -93,5 +93,17 @@ public class EventControl {
 		
 		return "event/eventRequestPage";
 	}
+	
+	
+	@RequestMapping("eventConfirmPage")
+	public String eventConfirmPage(int no, Model model) throws Exception {
+		Event event = eventService.get(no);
+		if (event == null) {
+			throw new Exception(no + "번 회원이 없습니다.");
+		}
+		model.addAttribute("event", event);
+		return "event/eventConfirmPage";
+
+	}
 
 }

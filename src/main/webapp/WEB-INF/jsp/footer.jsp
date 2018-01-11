@@ -32,7 +32,7 @@
 					gender: response.gender,
 					id: response.id
 				}, function(responseText) {
-					console.log(responseText);
+					//console.log(responseText);
 				})
 			});
 			console.log('bbb');
@@ -52,7 +52,6 @@
 		function facebookRegist(){
 			FB.getLoginStatus(function (response){
 				if(response.status == "connected"){
-					
 					handleFacebookRegist(response);
 				}else if(response.status == "not_authorized"){
 					

@@ -10,6 +10,7 @@ public interface EventService {
 	List<EventTemplate> listByTemplate(int no) throws Exception;
 	List<Event> list(int pageNo, int pageSize) throws Exception;
 	void add(Event event) throws Exception;
+	Event get(int no) throws Exception;
 	  
 
 }

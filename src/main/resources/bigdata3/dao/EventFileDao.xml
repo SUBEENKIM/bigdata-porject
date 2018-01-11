@@ -6,7 +6,7 @@
 <mapper namespace="bigdata3.dao.EventFileDao">
 	<resultMap type="upload" id="euploadMap">
 		<id column="efno" property="uploadNo" />
-		<result column="bno" property="branchNo" />
+		<result column="evno" property="eventNo" />
 		<result column="ori_file_name" property="fileName" />
 		<result column="save_file_name" property="newFileName" />
 		<result column="fm_date_time" property="uploadDate" />
@@ -16,13 +16,13 @@
 	</resultMap>
     
 	<insert id="insert" parameterType="map">
-		INSERT INTO event_file(bno,ori_file_name,save_file_name,fm_date_time,fm_udate_time,save_user_name,del_chk)
-		  VALUES(#{branchNo},#{fileName},#{newFileName},now(),now(),'조민국',DEFAULT) 
+		INSERT INTO event_file(evno,ori_file_name,save_file_name,fm_date_time,fm_udate_time,save_user_name,del_chk)
+		  VALUES(#{eventNo},#{fileName},#{newFileName},now(),now(),'조민국',DEFAULT) 
 	</insert>
 	
 	<delete id="delete" parameterType="int">
 		delete from event_file
-		where bno=#{branchNo}
+		where evno=#{eventNo}
 	</delete>
 
 </mapper>

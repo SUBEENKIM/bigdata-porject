@@ -15,13 +15,18 @@ public class Event {
 	String enddate;
 	boolean delCheck;
 	List<Upload> uploadList;
+	String bname;
+	String etptitle;
+
 	
 	@Override
 	public String toString() {
 		return "Event [no=" + no + ", etpno=" + etpno + ", bno=" + bno + ", type=" + type + ", title=" + title
 				+ ", info=" + info + ", content=" + content + ", content2=" + content2 + ", startdate=" + startdate
-				+ ", enddate=" + enddate + ", delCheck=" + delCheck + ", uploadList=" + uploadList + "]";
+				+ ", enddate=" + enddate + ", delCheck=" + delCheck + ", uploadList=" + uploadList + ", bname=" + bname
+				+ ", etptitle=" + etptitle + "]";
 	}
+
 	
 	public int getNo() {
 		return no;
@@ -95,9 +100,21 @@ public class Event {
 	public void setUploadList(List<Upload> uploadList) {
 		this.uploadList = uploadList;
 	}
+	public String getBname() {
+		return bname;
+	}
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+	public String getEtptitle() {
+		return etptitle;
+	}
+	public void setEtptitle(String etptitle) {
+		this.etptitle = etptitle;
+	}
 	
 	
-
+	
 	
 
 	

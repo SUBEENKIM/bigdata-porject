@@ -81,7 +81,7 @@ CREATE TABLE event (
 -- 이벤트 파일 관리 테이블
 CREATE TABLE `event_file` (
 	`efno`           INT(11)      NULL     COMMENT 'efno', -- efno
-	`bno`           INT(11)      NULL     COMMENT 'bno', -- bno
+	`evno`           INT(11)      NULL     COMMENT 'evno', -- evno
 	`ori_file_name`  VARCHAR(260) NOT NULL COMMENT 'ori_file_name', -- ori_file_name
 	`save_file_name` VARCHAR(36)  NOT NULL COMMENT 'save_file_name', -- save_file_name
 	`fm_date_time`   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'fm_date_time', -- fm_date_time
@@ -89,7 +89,7 @@ CREATE TABLE `event_file` (
 	`save_user_name` VARCHAR(30)  NOT NULL COMMENT 'save_user_name', -- save_user_name
 	`del_chk`        VARCHAR(10)  NOT NULL DEFAULT 'N' COMMENT 'del_chk' -- del_chk
 )
-COMMENT 'branch_file';
+COMMENT 'event_file';
 
 -- 이벤트 템플릿 테이블
 CREATE TABLE event_template (

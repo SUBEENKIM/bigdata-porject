@@ -16,6 +16,9 @@
 		<result column="evsdate" property="startdate" />
 		<result column="evedate" property="enddate" />
 		<result column="delchk" property="delcheck" />
+		<result column="bname" property="bname" />
+		<result column="etptitle" property="etptitle" />
+		
 
 		<collection property="uploadList" ofType="string">
 			<result column="save_file_name" />
@@ -35,6 +38,16 @@
 		evinfo)
 		values(#{bno},#{etpno}, #{title}, #{type}, #{startdate}, #{enddate}, #{content}, #{info})
 	</insert>
+	
+	<select id="selectOne" resultMap="eventMap" parameterType="int">
+    select  e.evtitle, e.evtype, e.evsdate, e.evedate, e.evcontent, e.evinfo, b.bname, et.etptitle, ef.save_file_name
+    from event e join branch b on e.bno=b.bno
+    			 left outer join event_template et on e.etpno=et.etpno
+    			 left outer join event_file ef on e.evno=ef.evno
+    where e.evno=#{eventNo}
+    
+    
+  </select>
 
 
 

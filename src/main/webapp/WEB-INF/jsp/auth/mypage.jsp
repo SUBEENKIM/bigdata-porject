@@ -180,9 +180,9 @@
 									<div class="5u$ 12u$(xsmall)">
 										<div class="select-wrapper">
 											<select name="branchSelect" id="branchSelect">
-															<!-- <c:forEach items="${branchList}" var="branch"> -->
+															<c:forEach items="${branchList}" var="branch">
 															<option value="${branch.no}">${branch.name}</option>
-															<!-- </c:forEach>-->
+															</c:forEach>
 														</select>
 										</div>
 									</div>

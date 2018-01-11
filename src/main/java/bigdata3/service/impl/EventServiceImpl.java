@@ -47,9 +47,16 @@ public class EventServiceImpl implements EventService{
 		List<Upload> uploadList =event.getUploadList();
 		for (Upload upload:uploadList) {
 			upload.setBranchNo(event.getBno());
-			System.out.println("************" + event.getBno());
+			upload.setEventNo(event.getNo());
 			eventFileDao.insert(upload);
 		}
 		//this.insertPhoto(branch.getNo(), branch.getPhotoList()); // 지점 사진 추가
 	}
+	
+	public Event get(int no) throws Exception{
+		return eventDao.selectOne(no);
+		  
+	}
+	
+	
 }
