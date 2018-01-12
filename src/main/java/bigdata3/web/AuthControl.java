@@ -36,12 +36,17 @@ public class AuthControl {
 
 	@RequestMapping("login")
 	public String login(HttpServletRequest req, HttpServletResponse resp, HttpSession session) throws Exception {
-		String userType = req.getParameter("userType");
+		//String userType = req.getParameter("userType");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 
 		BranchMaster branchMaster = null;
-		if (userType.equals("branchMaster")) {
+		
+		if(email.equals("admin@admin.com")) {
+			branchMaster = branchMasterService.getByEmailPassword(email, password);
+			return "redirect:../admin/main";
+			
+		}else  {
 			branchMaster = branchMasterService.getByEmailPassword(email, password);
 		}
 

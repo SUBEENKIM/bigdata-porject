@@ -109,16 +109,25 @@ $(document).ready(function()
 
 						<h4>Login into Your Email</h4>
 						<form action='login.do' method='POST'>
+
+							<div class="4u 12u$(small)">
+								<input type="radio" id="priority-low" name="userType"
+									value="manager"> <label for="priority-low">관리자</label>
+							</div>
+							<div class="4u 12u$(small)">
+								<input type="radio" id="priority-normal" name="userType"
+									value="branchMaster" checked> <label
+									for="priority-normal">점주</label>
+							</div>
+							<form method="post" action="#">
 								<div class="row uniform">
 									<div class="10u$">
-										<i class="fa fa-inbox"></i>
-										<input type="email" name="email"
-											value='${cookie.email.value}' placeholder="당신의 Email이 ID가 됩니다." />
+										<i class="fa fa-key"></i> <input type="email" name="email"
+											value='${cookie.email.value}' placeholder="Email" />
 									</div>
 									<div class="10u$">
-										<i class="fa fa-key"></i>
 										<input type="password" name="password" value=""
-											placeholder="password를 입력하세요." />
+											placeholder="password" />
 									</div>
 									<!-- checkbox -->
 									<div class="6u 12u$(small)">
@@ -127,7 +136,7 @@ $(document).ready(function()
 									</div>
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Log-in Now" /></li>
+											<li><input type="submit" value="Sign-In" /></li>
 											<li><a href="#" class="button special icon fa-search">Forgot
 													Password</a></li>
 										</ul>
@@ -137,7 +146,7 @@ $(document).ready(function()
 						</form>
 						<div class="12u$">
 							<ul class="actions">
-								<li><a href="#" class="button icon fa-user-plus"
+								<li><a href="#" class="button icon fa-download"
 									data-toggle="modal" data-target="#myModal2">Create New
 										Account</a></li>
 							</ul>
@@ -154,7 +163,7 @@ $(document).ready(function()
 							</div>
 
 							<a href="https://www.mfacebook.com/messages/t/1214050375393430"
-								class="button icon fa-bolt">Run Chatbot</a>
+								class="button">Run Chatbot</a>
 						</div>
 
 					</div>

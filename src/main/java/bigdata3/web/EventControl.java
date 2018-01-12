@@ -105,5 +105,14 @@ public class EventControl {
 		return "event/eventConfirmPage";
 
 	}
+	
+	@RequestMapping("eventBoard")
+	public void eventBoard() {
+	}
+	
+	
+	@RequestMapping("eventBoard2")
+	public void eventBoard2() {
+	}
 
 }
