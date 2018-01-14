@@ -18,6 +18,7 @@ import bigdata3.domain.BranchMaster;
 import bigdata3.service.BranchMasterService;
 import bigdata3.service.BranchService;
 
+
 @Controller
 @RequestMapping("/auth")
 public class AuthControl {
@@ -30,9 +31,9 @@ public class AuthControl {
 	public void form() {
 	}
 
-	@RequestMapping("index")
-	public void index() {
-	}
+//	@RequestMapping("index")
+//	public void index() {
+//	}
 
 	@RequestMapping("login")
 	public String login(HttpServletRequest req, HttpServletResponse resp, HttpSession session) throws Exception {
@@ -42,13 +43,23 @@ public class AuthControl {
 
 		BranchMaster branchMaster = null;
 		
-		if(email.equals("admin@admin.com")) {
-			branchMaster = branchMasterService.getByEmailPassword(email, password);
+		branchMaster = branchMasterService.getByEmailPassword(email, password);
+		
+		String bmgrade = branchMaster.getGrade();
+		
+		if(bmgrade.equals("admin")) {
 			return "redirect:../admin/main";
-			
-		}else  {
-			branchMaster = branchMasterService.getByEmailPassword(email, password);
 		}
+		
+		
+		
+//		if(email.equals("admin@admin.com")) {
+//			branchMaster = branchMasterService.getByEmailPassword(email, password);
+//			return "redirect:../admin/main";
+//			
+//		}else  {
+//			branchMaster = branchMasterService.getByEmailPassword(email, password);
+//		}
 
 		if (branchMaster != null) { // 현재 상태 : 아이디는 저장되지만 로그인할때마다 기억하기 체크박스 눌러줘야 다음 로그인때 저장됨.
 			session.setAttribute("loginBranchMaster", branchMaster);
@@ -63,7 +74,7 @@ public class AuthControl {
 				resp.addCookie(cookie2);
 			}
 
-			return "redirect:../auth/index";
+			return "redirect:../main";
 
 		} else {
 			return "auth/fail";
@@ -79,7 +90,7 @@ public class AuthControl {
 		}
 		System.out.println("-------------------------");
 		
-		return "redirect:../auth/index";
+		return "redirect:../main";
 	}
 	
 	@RequestMapping("logout")
@@ -112,7 +123,7 @@ public class AuthControl {
 	public String update(BranchMaster branchMaster) throws Exception {
 
 		branchMasterService.update(branchMaster);
-		return "redirect:../auth/index";
+		return "redirect:../main";
 	}
 
 }

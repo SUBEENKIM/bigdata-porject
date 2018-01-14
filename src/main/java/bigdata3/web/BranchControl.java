@@ -29,15 +29,6 @@ public class BranchControl {
 	@Autowired
 	UploadService uploadService;
 
-	@RequestMapping("list")
-	public String list(@RequestParam(defaultValue = "1") int pageNo, @RequestParam(defaultValue = "20") int pageSize,
-			Model model) throws Exception {
-
-		List<Branch> list = branchService.list(pageNo, pageSize);
-		model.addAttribute("list", list);
-
-		return "branch/list";
-	}
 
 	@RequestMapping("add")
 	public String add(Branch branch, MultipartFile[] photo) throws Exception {
@@ -60,7 +51,7 @@ public class BranchControl {
 		branch.setUploadList(uploadList);
 		branchService.add(branch);
 
-		return "redirect:list";
+		return "redirect:../admin/branchlist";
 	}
 
 	@RequestMapping("update")
@@ -81,24 +72,33 @@ public class BranchControl {
 		}
 		branch.setUploadList(uploadList);
 		branchService.update(branch);
-		return "redirect:list";
+		return "redirect:../admin/branchlist";
 	}
 
-	@RequestMapping("detail")
-	public String detail(int no, Model model) throws Exception {
-		Branch branch = branchService.get(no);
-		if (branch == null) {
-			throw new Exception(no + "번 회원이 없습니다.");
-		}
-		model.addAttribute("branch", branch);
-		return "branch/detail";
-
-	}
 
 	@RequestMapping("delete")
 	public String delete(int no) throws Exception {
 		branchService.remove(no);
-		return "redirect:list";
+		return "redirect:../admin/branchlist";
 	}
 
+//	@RequestMapping("detail")
+//	public String detail(int no, Model model) throws Exception {
+//		Branch branch = branchService.get(no);
+//		if (branch == null) {
+//			throw new Exception(no + "번 회원이 없습니다.");
+//		}
+//		model.addAttribute("branch", branch);
+//		return "branch/detail";
+//
+//	}
+//	@RequestMapping("list")
+//	public String list(@RequestParam(defaultValue = "1") int pageNo, @RequestParam(defaultValue = "20") int pageSize,
+//			Model model) throws Exception {
+//
+//		List<Branch> list = branchService.list(pageNo, pageSize);
+//		model.addAttribute("list", list);
+//
+//		return "branch/list";
+//	}
 }

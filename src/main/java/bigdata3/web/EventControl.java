@@ -40,14 +40,14 @@ public class EventControl {
 	@Autowired
 	UploadService uploadService;
 	
-	@RequestMapping("eventList")
+	@RequestMapping("eventlist")
 	public String list(@RequestParam(defaultValue = "1") int pageNo, @RequestParam(defaultValue = "20") int pageSize,
 			Model model) throws Exception {
 
 		List<Event> eventList = eventService.list(pageNo, pageSize);
 		model.addAttribute("list", eventList);
 
-		return "event/eventList";
+		return "event/eventlist";
 	}
 	
 	@RequestMapping("add")
@@ -70,11 +70,11 @@ public class EventControl {
 		event.setUploadList(uploadList);
 		eventService.add(event);
 		
-		return "storeManagement/main";
+		return "storemanagement/main";
 	}
 	
 	
-	@RequestMapping("eventRequestPage")
+	@RequestMapping("eventrequest")
 	public String eventRequestPage(
 			HttpSession session, 
 			Model model)throws Exception {
@@ -91,28 +91,36 @@ public class EventControl {
 		
 		
 		
-		return "event/eventRequestPage";
+		return "event/eventrequest";
 	}
 	
 	
-	@RequestMapping("eventConfirmPage")
+	@RequestMapping("eventconfirm")
 	public String eventConfirmPage(int no, Model model) throws Exception {
 		Event event = eventService.get(no);
 		if (event == null) {
 			throw new Exception(no + "번 회원이 없습니다.");
 		}
 		model.addAttribute("event", event);
-		return "event/eventConfirmPage";
+		return "event/eventconfirm";
 
 	}
 	
-	@RequestMapping("eventBoard")
+	@RequestMapping("eventboard")
 	public void eventBoard() {
 	}
 	
-	
-	@RequestMapping("eventBoard2")
+	@RequestMapping("eventboard2")
 	public void eventBoard2() {
+	}
+	
+	
+	@RequestMapping("eventboard3")
+	public String eventBoard3(int no, Model model) throws Exception{
+		Event event = eventService.get(no);
+		model.addAttribute("event", event);
+		return "event/eventBoard2";
+		
 	}
 
 }

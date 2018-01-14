@@ -55,7 +55,7 @@
 						<a href="dmb_menu.html" class="button">Menu Board Management</a>
 						<hr />
 						<p>이벤트보드 윈도우에 표시할 페이지를 등록하세요. 수정 및 삭제도 가능합니다.</p>
-						<a href="${pageContext.request.contextPath}/event/eventRequestPage" class="button">Event Board
+						<a href="${pageContext.request.contextPath}/event/eventrequest" class="button">Event Board
 							Management</a>
 					</div>
 				</div>
@@ -72,7 +72,7 @@
 							제어방식에는 자동셋팅과 수동셋팅이 존재합니다.<br> 스마트폰으로 챗봇을 통해 서비스를 이용할 수도
 							있습니다.
 						</p>
-						<a href="iot_control.html" class="button">실내환경 확인 및 설정</a>
+						<a href="${pageContext.request.contextPath}/awsiot/iotcontrol" class="button">실내환경 확인 및 설정</a>
 					</div>
 					<div class="col col1 first">
 						<div class="image round fit">

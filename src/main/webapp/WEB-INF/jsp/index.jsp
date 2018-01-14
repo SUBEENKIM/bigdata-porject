@@ -22,10 +22,10 @@
 <body>
 
 	<!-- Header -->
-	<jsp:include page="../headeralt.jsp"></jsp:include>
+	<jsp:include page="./headeralt.jsp"></jsp:include>
 
 	<!-- Nav -->
-	<jsp:include page="../navi.jsp"></jsp:include>
+	<jsp:include page="./navi.jsp"></jsp:include>
 
 	<!-- Banner -->
 	<section id="banner">
@@ -116,7 +116,7 @@
 			</div>
 
 	<!-- Footer -->
-	<jsp:include page="../footer2.jsp"></jsp:include>
+	<jsp:include page="./footer2.jsp"></jsp:include>
 
 	<!-- Scripts -->
 	<script

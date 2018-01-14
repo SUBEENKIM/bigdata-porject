@@ -12,29 +12,33 @@
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" /> 
 
 <!-- page specific plugin styles -->
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet"
 	href="https://jqueryui.com/resources/demos/style.css">
+		
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath}/assets/css/jquery-ui.custom.min.css" />
+
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath}/assets/css/chosen.min.css" />
 
-<!-- text fonts -->
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
 	class="ace-main-stylesheet" id="main-ace-style">
-<link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/assets/css/registration.css" />
 
-<!-- Favicon and touch icons -->
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/assets/css/registration.css" /> 
+
+
+
+
 <link rel="icon"
 	href="${pageContext.servletContext.contextPath}/ico/home_iot.png">
 <style>
@@ -54,12 +58,13 @@
 
 <body class="subpage">
 
-	<!-- Header -->
-	<jsp:include page="../header.jsp"></jsp:include>
-
+	<!-- Header-->
+	<jsp:include page="../header.jsp"></jsp:include>  
+	
+	
 	<!-- Nav -->
 	<jsp:include page="../navi.jsp"></jsp:include>
-
+	
 	<!-- Modal -->
 	<div class="container">
 		<div id="my-modal" class="modal fade" tabindex="-1">
@@ -102,8 +107,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- /.modal-content -->
+				</div><!-- /.modal-content -->
 
 				<button
 					class="btn btn-default btn-app btn-xs ace-settings-btn aside-trigger"
@@ -111,8 +115,7 @@
 					<i data-icon2="fa-arrow-down" data-icon1="fa-arrow-up"
 						class="ace-icon fa fa-arrow-up bigger-110 icon-only"></i>
 				</button>
-			</div>
-			<!-- /.modal-dialog -->
+			</div><!-- /.modal-dialog -->
 		</div>
 	</div>
 
@@ -133,7 +136,7 @@
 					<div class="3u 12u$(medium)">
 						<div class="box">
 							<p align="center">
-								<strong>김수빈</strong> 님 반갑습니다.
+								<strong>'${loginBranchMaster.name}'</strong> 님 반갑습니다.
 							</p>
 							<a href="loginmain.html" class="button special">로그인 페이지 이동</a> <a
 								href="#" class="button alt">로그 아웃</a>
@@ -141,11 +144,11 @@
 						<div class="box">
 							<ul class="actions vertical">
 								<li><a href="dmb_menu.html" class="button">메뉴보드</a></li>
-								<li><a href="dmb_event.html" class="button">이벤트보드</a></li>
-								<li><a href="iot_control.html" class="button">실내 환경</a></li>
-								<li><a href="store_management.html" class="button">매장관리
+								<li><a href="${pageContext.request.contextPath}/event/eventrequest" class="button">이벤트보드</a></li>
+								<li><a href="${pageContext.request.contextPath}/awsiot/iotcontrol" class="button">실내 환경</a></li>
+								<li><a href="${pageContext.request.contextPath}/storemanagement/main" class="button">매장관리
 										처음으로 이동</a></li>
-								<li><a href="mypage.html" class="button">마이페이지로 이동</a></li>
+								<li><a href='${pageContext.request.contextPath}/auth/mypage' class="button">마이페이지로 이동</a></li>
 							</ul>
 						</div>
 					</div>
@@ -154,10 +157,10 @@
 							<form method="post" role="form" action="add.do" enctype="multipart/form-data">
 								<div class="row uniform">
 
-									<div class="2u 12u$(xsmall)">
+									<div class="3u 12u$(xsmall)">
 										<h4>매장명</h4>
 									</div>
-									<div class="5u 12u$(xsmall)">
+									<div class="5u$ 12u$(xsmall)">
 										<div class="select-wrapper">
 											<select id="branchSelect" name="bno">
 
@@ -178,7 +181,7 @@
 												<c:forEach items="${templateList}" var="template">
 													<option value="${template.no}">${template.title}</option>
 
-												</c:forEach>
+												 </c:forEach>
 											</select>
 										</div>
 									</div>
@@ -203,7 +206,7 @@
 									</div>
 									<div class="5u$ 12u$(xsmall)">
 										<div class="select-wrapper">
-											<select name="type" id="eventSelect">
+											<select name="type" id="eventSelect" name="eventSelect">
 												<option value="">- 이벤트를 선택하세요 -</option>
 												<option value="할인 Event">할인 Event</option>
 												<option value="신제품 Event">신제품 Event</option>
@@ -236,18 +239,18 @@
 														style="font-size: 1.2em; color: #669FC7;">이미지 넣기</h4>
 
 													<div class="widget-toolbar">
-														<a href="#" data-action="collapse"> <i
-															class="ace-icon fa fa-chevron-up"></i>
-														</a> <a href="#" data-action="close"> <i
-															class="ace-icon fa fa-times"></i>
+														<a href="#" data-action="collapse">
+															<i class="ace-icon fa fa-chevron-up"></i>
+														</a>
+
+														<a href="#" data-action="close">
+															<i class="ace-icon fa fa-times"></i>
 														</a>
 													</div>
 												</div>
 
 												<div class="widget-body">
 													<div class="widget-main">
-														
-
 														<div class="form-group">
 															<div class="col-xs-12">
 																<input  type="file" name="photo"
@@ -265,9 +268,7 @@
 										</div>
 
 										<div class="col-xs-12 col-sm-6">
-											<div class="image fit">
-												 <img class="img-thumbnail" id="output" alt="store image" items="${event.uploadList}" var="path" /> 
-												</div>
+											
 											<div class="form-group">
 												<label for="wineventTitle"> 중요 어필 포인트</label>
 
@@ -290,7 +291,6 @@
 										</div>
 									</div>
 
-
 									<!-- Break -->
 									<div class="12u$">
 										<ul class="actions">
@@ -310,8 +310,9 @@
 		</section>
 	</div>
 
-	<!-- Footer -->
-	<jsp:include page="../footer.jsp"></jsp:include>
+	<!-- Footer 바꼈으니 반드시 바꿔줘야 함!-->
+	<jsp:include page="../footer2.jsp"></jsp:include>
+	
 
 	<!-- Scripts -->
 	<script type="text/javascript"
@@ -373,18 +374,17 @@
 			}
 		});
 	</script>
+	
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/jquery-ui.custom.min.js"></script>
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/chosen.jquery.min.js"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/assets/js/jquery.knob.min.js"></script>
+	
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/autosize.min.js"></script>
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/jquery.inputlimiter.min.js"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/assets/js/jquery.maskedinput.min.js"></script>
+	
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
 	<script
@@ -401,6 +401,7 @@
 		src="${pageContext.servletContext.contextPath}/assets/js/main.js"></script>
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/bootstrap.min.js"></script>
+	
 	<script>
 		var branchList = {};
 
@@ -457,19 +458,7 @@
 	</script>
 	<script type="text/javascript">
 		jQuery(function($) {
-			$('#id-disable-check').on('click', function() {
-				var inp = $('#form-input-readonly').get(0);
-				if (inp.hasAttribute('disabled')) {
-					inp.setAttribute('readonly', 'true');
-					inp.removeAttribute('disabled');
-					inp.value = "This text field is readonly!";
-				} else {
-					inp.setAttribute('disabled', 'disabled');
-					inp.removeAttribute('readonly');
-					inp.value = "This text field is disabled!";
-				}
-			});
-
+		
 			if (!ace.vars['touch']) {
 				$('.chosen-select').chosen({
 					allow_single_deselect : true
@@ -495,19 +484,6 @@
 									'width' : $this.parent().width()
 								});
 							})
-						});
-
-				$('#chosen-multiple-style .btn').on(
-						'click',
-						function(e) {
-							var target = $(this).find('input[type=radio]');
-							var which = parseInt(target.val());
-							if (which == 2)
-								$('#form-field-select-4').addClass(
-										'tag-input-style');
-							else
-								$('#form-field-select-4').removeClass(
-										'tag-input-style');
 						});
 			}
 
@@ -643,44 +619,6 @@
 						 */
 
 					});
-
-			$(".knob").knob();
-
-			/////////
-			$('#modal-form input[type=file]').ace_file_input({
-				style : 'well',
-				btn_choose : 'Drop files here or click to choose',
-				btn_change : null,
-				no_icon : 'ace-icon fa fa-cloud-upload',
-				droppable : true,
-				thumbnail : 'large'
-			})
-
-			//chosen plugin inside a modal will have a zero width because the select element is originally hidden
-			//and its width cannot be determined.
-			//so we set the width after modal is show
-			$('#modal-form').on(
-					'shown.bs.modal',
-					function() {
-						if (!ace.vars['touch']) {
-							$(this).find('.chosen-container').each(
-									function() {
-										$(this).find('a:first-child').css(
-												'width', '210px');
-										$(this).find('.chosen-drop').css(
-												'width', '210px');
-										$(this).find('.chosen-search input')
-												.css('width', '200px');
-									});
-						}
-					})
-			/**
-			//or you can activate the chosen plugin after modal is shown
-			//this way select element becomes visible with dimensions and chosen works as expected
-			$('#modal-form').on('shown', function () {
-				$(this).find('.modal-chosen').chosen();
-			})
-			 */
 
 			$(document)
 					.one(
