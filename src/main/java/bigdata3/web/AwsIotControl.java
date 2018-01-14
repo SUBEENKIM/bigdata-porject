@@ -31,10 +31,6 @@ public class AwsIotControl {
 	@RequestMapping("iotcontrol")
 	public String getHumiTempDust(HttpSession session, Model model) throws Exception {
 
-		BranchMaster branchMaster = (BranchMaster) session.getAttribute("loginBranchMaster");
-		List<Branch> branchList = branchService.listByBranchNo(branchMaster.getNo());
-		model.addAttribute("branchList", branchList);
-		model.addAttribute("message", awsIotService.getMessage());
 
 		return "awsiot/iotcontrol";
 	}
@@ -67,6 +63,14 @@ public class AwsIotControl {
 			return "fail";
 		}
 		return "ok";
+	}
+	
+	@RequestMapping("intro")
+	public String awsiotintro()throws Exception {
+		
+	
+
+		return "bigdata/intro";
 	}
 
 }

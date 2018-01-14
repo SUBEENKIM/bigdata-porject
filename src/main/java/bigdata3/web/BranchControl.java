@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import bigdata3.domain.Branch;
+import bigdata3.domain.BranchMaster;
 import bigdata3.domain.Upload;
 import bigdata3.service.BranchService;
 import bigdata3.service.UploadService;
@@ -80,6 +82,18 @@ public class BranchControl {
 	public String delete(int no) throws Exception {
 		branchService.remove(no);
 		return "redirect:../admin/branchlist";
+	}
+	
+	
+	
+	
+	@RequestMapping("mybranchinfo")
+	public String branchinfo(HttpSession session, Model model) throws Exception {
+		BranchMaster branchMaster = (BranchMaster) session.getAttribute("loginBranchMaster");
+		List<Branch> branchList = branchService.listByBranchNo(branchMaster.getNo());
+		model.addAttribute("branchList", branchList);
+		return "branch/mybranchinfo";
+
 	}
 
 //	@RequestMapping("detail")

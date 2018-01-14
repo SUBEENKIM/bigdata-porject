@@ -12,5 +12,17 @@ public class IndexControl {
 	public String form() {
 		return "index";
 	}
+	
+	
+	@RequestMapping("storeinfo")
+	public String storeinfo() {
+		return "storeinfo";
+	}
+	
+	@RequestMapping("chatbot")
+	public String chatbot() {
+		return "chatbot";
+	}
+
 
 }

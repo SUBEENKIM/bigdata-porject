@@ -135,14 +135,14 @@
 							<p align="center">
 								<strong>'${loginBranchMaster.name}'</strong> 님 반갑습니다.
 							</p>
-							<a href="loginmain.html" class="button special">로그인 페이지 이동</a>
+							<a href="" class="button special">로그인 페이지 이동</a>
 							<a href="${pageContext.request.contextPath}/auth/logout.do" class="button alt" onclick="">로그 아웃</a>
 						</div>
 						<div class="box">
 							<ul class="actions vertical">
 								<li><a href="#" class="button" data-toggle="modal" data-target="#passModal">패스워드재설정</a></li>
-								<li><a href="store_retouch.html" class="button">매장정보</a></li>
-								<li><a href="iot_retouch.html" class="button">기기정보</a></li>
+								<li><a href="${pageContext.request.contextPath}/branch/mybranchinfo" class="button">매장정보</a></li>
+								<li><a href="${pageContext.request.contextPath}/deviceinfo" class="button">기기정보</a></li>
 								<li><a href="menu_retouch.html" class="button">메뉴정보</a></li>
 								<li><a href="writed_bd.html" class="button">내가 쓴 게시글</a></li>
 								<li><a href="delete_user.html" class="button">회원탈퇴</a></li><!-- 모달창으로 구현? -->
@@ -246,6 +246,7 @@
 	<script src="${pageContext.servletContext.contextPath}/assets/js/skel.min.js"></script>
 	<script src="${pageContext.servletContext.contextPath}/assets/js/util.js"></script>
 	<script src="${pageContext.servletContext.contextPath}/assets/js/main.js"></script>
+	
 	<script>
 		var branchList = {};
         
@@ -271,6 +272,7 @@
     		bno.value = (branchList[branchNo].no);
     		btel.value = (branchList[branchNo].tel);
     	})
+    	console.log(branchList[branchNo].tel)
 	</script>
 
 </body>

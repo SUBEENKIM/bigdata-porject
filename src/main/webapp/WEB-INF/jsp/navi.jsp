@@ -22,7 +22,7 @@
 			
 			
 			<li><a href="${pageContext.request.contextPath}/storemanagement/main">매장관리</a></li>
-			<li><a href="bigdatatest.html">빅데이터</a></li>
+			<li><a href="${pageContext.request.contextPath}/bigdata/analysis">빅데이터</a></li>
 			<li><a href="noticeboard.html">게시판</a></li>
 			<li><a href="index_admin.html">Admin Only</a></li>
 		</ul>

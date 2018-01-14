@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 <meta charset="utf-8" />
 <title>Index Admin</title>
@@ -25,6 +26,9 @@
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
 	class="ace-main-stylesheet" id="main-ace-style" />
+	
+<!-- Morris Chart Styles-->
+	<link href="${pageContext.servletContext.contextPath}/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
 
 <!-- Favicon and touch icons -->
 <link rel="icon"
@@ -32,6 +36,22 @@
 <!-- ace settings handler -->
 <script
 	src="${pageContext.servletContext.contextPath}/assets/js/ace-extra.min.js"></script>
+	
+<style>
+	.board .panel {
+    padding: 25px 15px;
+	}
+	.panel-primary {
+    display: inline-block;
+    margin-bottom: 30px;
+    width: 100%;
+	}
+	.board .icon {
+    float: right;
+		position: relative;
+		margin-top: -64px;	
+	}
+	</style>
 </head>
 
 <body class="no-skin">
@@ -540,7 +560,7 @@
 															<div class="clearfix">
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="images/avatars/master.png" />
+																		<img alt="Bob Doe's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/master.png" />
 																	</div>
 
 																	<div class="body">
@@ -593,7 +613,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Joe Doe's avatar" src="images/avatars/avatar2.png" />
+																		<img alt="Joe Doe's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -646,7 +666,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Jim Doe's avatar" src="images/avatars/avatar.png" />
+																		<img alt="Jim Doe's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
@@ -699,7 +719,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alex Doe's avatar" src="images/avatars/avatar5.png" />
+																		<img alt="Alex Doe's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar5.png" />
 																	</div>
 
 																	<div class="body">
@@ -720,7 +740,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="images/avatars/avatar2.png" />
+																		<img alt="Bob Doe's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -741,7 +761,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Susan's avatar" src="images/avatars/avatar3.png" />
+																		<img alt="Susan's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
@@ -762,7 +782,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Phil Doe's avatar" src="images/avatars/avatar4.png" />
+																		<img alt="Phil Doe's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar4.png" />
 																	</div>
 
 																	<div class="body">
@@ -783,7 +803,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alexa Doe's avatar" src="images/avatars/user.jpg" />
+																		<img alt="Alexa Doe's avatar" src="${pageContext.servletContext.contextPath}/images/avatars/user.jpg" />
 																	</div>
 
 																	<div class="body">
@@ -822,7 +842,7 @@
 															<div class="comments">
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's Avatar" src="images/avatars/avatar.png" />
+																		<img alt="Bob Doe's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
@@ -878,7 +898,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Jennifer's Avatar" src="images/avatars/user.jpg" />
+																		<img alt="Jennifer's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/user.jpg" />
 																	</div>
 
 																	<div class="body">
@@ -912,7 +932,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Joe's Avatar" src="images/avatars/avatar2.png" />
+																		<img alt="Joe's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -946,7 +966,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Rita's Avatar" src="images/avatars/avatar3.png" />
+																		<img alt="Rita's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
@@ -1013,7 +1033,7 @@
 													<div class="dialogs">
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="images/avatars/user.jpg" />
+																<img alt="Alexa's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/user.jpg" />
 															</div>
 
 															<div class="body">
@@ -1037,7 +1057,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="John's Avatar" src="images/avatars/avatar.png" />
+																<img alt="John's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar.png" />
 															</div>
 
 															<div class="body">
@@ -1061,7 +1081,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Bob's Avatar" src="images/avatars/master.png" />
+																<img alt="Bob's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/master.png" />
 															</div>
 
 															<div class="body">
@@ -1086,7 +1106,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Jim's Avatar" src="images/avatars/avatar4.png" />
+																<img alt="Jim's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar4.png" />
 															</div>
 
 															<div class="body">
@@ -1110,7 +1130,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="images/avatars/avatar1.png" />
+																<img alt="Alexa's Avatar" src="${pageContext.servletContext.contextPath}/images/avatars/avatar1.png" />
 															</div>
 
 															<div class="body">
@@ -1208,12 +1228,23 @@
 		src="${pageContext.servletContext.contextPath}/assets/js/jquery.flot.pie.min.js"></script>
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/jquery.flot.resize.min.js"></script>
+		
+	<!-- Metis Menu Js -->
+	<script src="${pageContext.servletContext.contextPath}/assets/js/jquery.metisMenu.js"></script>
+	<!-- Chart Js -->
+	<script type="text/javascript" src="${pageContext.servletContext.contextPath}/assets/js/Chart.min.js"></script>
+	<!-- Morris Chart Js -->
+	<script src="${pageContext.servletContext.contextPath}/assets/js/morris/raphael-2.1.0.min.js"></script>
+	<script src="${pageContext.servletContext.contextPath}/assets/js/morris/morris.js"></script>
 
 	<!-- ace scripts -->
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
 	<script
 		src="${pageContext.servletContext.contextPath}/assets/js/ace.min.js"></script>
+		
+	<!-- Custom Js -->
+	<script src="${pageContext.servletContext.contextPath}/assets/js/custom-scripts.js"></script>
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
