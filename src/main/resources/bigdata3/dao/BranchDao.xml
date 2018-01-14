@@ -29,7 +29,7 @@
   </select>
   
   <select id="selectListByBranchNo" resultMap="branchMap" parameterType="int">
-    select b.bname, b.bno, b.btel, null as save_file_name
+    select b.bname, b.bno, b.btel, b.baddr, null as save_file_name
     from branch b
     where b.bmno=#{branchmasterNo}
   </select>

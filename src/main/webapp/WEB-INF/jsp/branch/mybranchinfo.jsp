@@ -59,7 +59,7 @@
 					</div>
 					<div class="9u$ 12u$(medium)">
 						<div class="box">
-							<form method="post" action="#">
+							<form method="post" action="update">
 								<div class="row uniform">
 
 									<div class="2u 12u$(xsmall)">
@@ -99,7 +99,7 @@
 										<h4>주소</h4>
 									</div>
 									<div class="5u 12u$(xsmall)">
-										<input type="text" name="baddr" id="baddr" value="" placeholder="주소" />
+										<input type="text" name="adress" id="sample6_address" value="" placeholder="주소" />
 									</div>
 									<div class="5u$ 12u$(xsmall)">
 										<input type="text" name="adress2" id="sample6_address2" value="" placeholder="상세주소" />
@@ -206,7 +206,7 @@
         
         //var bno = document.getElementById("bno");
         var btel = document.getElementById("btel");
-        var baddr = document.getElementById("baddr");
+        var baddr = document.getElementById("sample6_address");
         //bno.value = (branchList[branchNo].no);
         btel.value = (branchList[branchNo].tel);
         baddr.value = (branchList[branchNo].addr);
