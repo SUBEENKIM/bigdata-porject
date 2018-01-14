@@ -9,7 +9,7 @@ alter table branch_master add unique key(bmemail);
 alter table branch_master modify column bmgrade varchar(50) DEFAULT 'branch_master';
 
 insert into branch_master(bmno, bmemail, bmpwd, bmname, bmtel) values(1, "kshf59@naver.com", password('1111'), "김상훈", "010-9790-2409");
-insert into branch_master(bmno, bmemail, bmpwd, bmname, bmtel) values(2, "admin@admin.com", password('1111'), "admin", "010-1111-1111");
+insert into branch_master(bmno, bmemail, bmpwd, bmname, bmtel, bmgrade) values(2, "admin@admin.com", password('1111'), "admin", "010-1111-1111", "admin");
 -- Branch
 alter table branch add primary key(bno);
 
