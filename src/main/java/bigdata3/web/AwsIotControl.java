@@ -70,7 +70,7 @@ public class AwsIotControl {
 		
 	
 
-		return "bigdata/intro";
+		return "awsiot/intro";
 	}
 
 }

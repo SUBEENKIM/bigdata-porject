@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container">
-	<form action="add.do" method="POST">
+	<form action="add" method="POST">
 		<div class="row">
 			<div class="col-xs-12 col-md-4 col-md-offset-4">
 
