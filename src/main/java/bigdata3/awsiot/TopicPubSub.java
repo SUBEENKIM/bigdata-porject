@@ -25,8 +25,11 @@ public class TopicPubSub {
   private String clientEndpoint = "a1jawjb5359l39.iot.ap-northeast-2.amazonaws.com";
   private String clientId = "client3";
 
-  private String certificateFile = "C://Users/subee/Desktop/a/connect_device_package/dev01.cert.pem";
-  private String privateKeyFile = "C://Users/subee/Desktop/a/connect_device_package/dev01.private.key";
+//  private String certificateFile = "C://Users/subee/Desktop/a/connect_device_package/dev01.cert.pem";
+//  private String privateKeyFile = "C://Users/subee/Desktop/a/connect_device_package/dev01.private.key";
+  
+  private String certificateFile = "/home/ec2-user/vars/aws-iot/dev01/dev01.cert.pem";
+  private String privateKeyFile = "/home/ec2-user/vars/aws-iot/dev01/dev01.private.key";
 
   // private String result;
   private String humidity;

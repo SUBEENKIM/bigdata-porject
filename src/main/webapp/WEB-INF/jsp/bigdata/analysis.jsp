@@ -28,9 +28,9 @@
 			height: 114px;
 		}
 			.infobox>.infobox-data {
-    		font-size: 17px;
+    		font-size: 13px;
     		line-height: 48px;
-    		min-width: 180px;
+    		min-width: 190px;
     		padding-left: 80px;
 		}
 			.infobox>.infobox-data>.infobox-text {
@@ -142,7 +142,7 @@
 
 											<div class="infobox-data">
 												<span class="infobox-data-number">평균:97.08</span>
-												<div class="infobox-content">월별 매출</div>
+												<div class="infobox-content">월별 매출(단위:100만)</div>
 											</div>
 
 											<div class="badge badge-success">
@@ -158,7 +158,7 @@
 
 											<div class="infobox-data">
 												<span class="infobox-data-number">평균:96.82</span>
-												<div class="infobox-content">월별 매출</div>
+												<div class="infobox-content">월별 매출(단위:100만)</div>
 											</div>
 
 											<div class="badge badge-important">
@@ -174,7 +174,7 @@
 
 											<div class="infobox-data">
 												<span class="infobox-data-number">평균:116.87</span>
-												<div class="infobox-content">월별 매출</div>
+												<div class="infobox-content">월별 매출(단위:100만)</div>
 											</div>
 
 											<div class="badge badge-success">
