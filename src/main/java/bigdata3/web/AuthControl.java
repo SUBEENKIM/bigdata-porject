@@ -18,7 +18,6 @@ import bigdata3.domain.BranchMaster;
 import bigdata3.service.BranchMasterService;
 import bigdata3.service.BranchService;
 
-
 @Controller
 @RequestMapping("/auth")
 public class AuthControl {
@@ -31,68 +30,54 @@ public class AuthControl {
 	public void form() {
 	}
 
-//	@RequestMapping("index")
-//	public void index() {
-//	}
+	// @RequestMapping("index")
+	// public void index() {
+	// }
 
 	@RequestMapping("login")
 	public String login(HttpServletRequest req, HttpServletResponse resp, HttpSession session) throws Exception {
-		//String userType = req.getParameter("userType");
+		// String userType = req.getParameter("userType");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 
 		BranchMaster branchMaster = null;
-		
+
 		branchMaster = branchMasterService.getByEmailPassword(email, password);
-		
+
 		String bmgrade = branchMaster.getGrade();
+
+		session.setAttribute("loginBranchMaster", branchMaster);
 		
-		if(bmgrade.equals("admin")) {
+		if (bmgrade.equals("admin")) {
 			return "redirect:../admin/main";
 		}
-		
-		
-		
-//		if(email.equals("admin@admin.com")) {
-//			branchMaster = branchMasterService.getByEmailPassword(email, password);
-//			return "redirect:../admin/main";
-//			
-//		}else  {
-//			branchMaster = branchMasterService.getByEmailPassword(email, password);
-//		}
-
-		if (branchMaster != null) { // 현재 상태 : 아이디는 저장되지만 로그인할때마다 기억하기 체크박스 눌러줘야 다음 로그인때 저장됨.
-			session.setAttribute("loginBranchMaster", branchMaster);
-			String saveEmail = req.getParameter("saveEmail");
-			if (saveEmail != null) {
-				Cookie cookie2 = new Cookie("email", email);
-				cookie2.setMaxAge(60 * 60 * 24 * 7);
-				resp.addCookie(cookie2);
-			} else {
-				Cookie cookie2 = new Cookie("email", "");
-				cookie2.setMaxAge(0);
-				resp.addCookie(cookie2);
-			}
-
-			return "redirect:../main";
-
+		String saveEmail = req.getParameter("saveEmail");
+		if (saveEmail != null) {
+			Cookie cookie2 = new Cookie("email", email);
+			cookie2.setMaxAge(60 * 60 * 24 * 7);
+			resp.addCookie(cookie2);
 		} else {
-			return "auth/fail";
+			Cookie cookie2 = new Cookie("email", "");
+			cookie2.setMaxAge(0);
+			resp.addCookie(cookie2);
 		}
+
+		return "redirect:../main";
 	}
-	
+
 	@RequestMapping("facebooklogin")
-	public String facebooklogin(HttpServletRequest req, HttpServletResponse resp, HttpSession session) throws Exception {
+	public String facebooklogin(HttpServletRequest req, HttpServletResponse resp, HttpSession session)
+			throws Exception {
 		Enumeration<String> paramNames = req.getParameterNames();
 		while (paramNames.hasMoreElements()) {
 			String name = paramNames.nextElement();
 			System.out.printf("%s=%s\n", name, req.getParameter(name));
 		}
 		System.out.println("-------------------------");
-		
+
 		return "redirect:../main";
 	}
-	
+
 	@RequestMapping("logout")
 	public String logout(HttpServletRequest req) throws Exception {
 		req.getSession().invalidate();

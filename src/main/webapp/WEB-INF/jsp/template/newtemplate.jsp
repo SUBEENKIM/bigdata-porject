@@ -7,32 +7,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<title>게시판 추가</title>
+<title>템플릿 정보 등록</title>
 
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/bootstrap.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/bootstrap.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/font-awesome.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
 
 <!-- page specific plugin styles -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/jquery-ui.custom.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/jquery-ui.custom.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/chosen.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/chosen.min.css" />
 
 <!-- text fonts -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 
 <!-- ace styles -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/ace.min.css"
+	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
 	class="ace-main-stylesheet" id="main-ace-style" />
 
 <!-- Favicon and touch icons -->
 <link rel="icon"
-	href="${pageContext.servletContext.contextPath}/resources/ico/home_iot.png">
+	href="${pageContext.servletContext.contextPath}/ico/home_iot.png">
 
 <style>
 .image {
@@ -55,7 +55,7 @@
 
 <!-- ace settings handler -->
 <script
-	src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-extra.min.js"></script>
+	src="${pageContext.servletContext.contextPath}/assets/js/ace-extra.min.js"></script>
 </head>
 
 <body class="no-skin">
@@ -350,84 +350,60 @@
 			<!-- /.sidebar-shortcuts -->
 
 			<ul class="nav nav-list">
-				<li class="active"><a href="index_admin.html"> <i
+				<li class="active"><a href="main"> <i
 						class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
 							Dashboard </span>
 				</a> <b class="arrow"></b></li>
 
 				<li class=""><a href="#" class="dropdown-toggle"> <i
 						class="menu-icon fa fa-bar-chart-o"></i> <span class="menu-text">
-							UI &amp; Elements </span> <b class="arrow fa fa-angle-down"></b>
+							Board Mgt </span> <b class="arrow fa fa-angle-down"></b>
 				</a> <b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class=""><a href="#" class="dropdown-toggle"> <i
-								class="menu-icon fa fa-caret-right"></i> Layouts <b
-								class="arrow fa fa-angle-down"></b>
-						</a> <b class="arrow"></b>
-
-							<ul class="submenu">
-								<li class=""><a href="top-menu.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Top Menu
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="two-menu-2.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Two Menus 2
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="mobile-menu-1.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Default Mobile Menu
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="mobile-menu-2.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Mobile Menu 2
-								</a> <b class="arrow"></b></li>
-
-							</ul></li>
-
-						<li class=""><a href="typography.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Typography
+						<li class=""><a href="../menuboard/confirm"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu Confirm
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="buttons.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Buttons &amp; Icons
+						<li class=""><a href="../menuboard/new"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu Template
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="treeview.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Treeview
+						<li class=""><a href="../category/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu category
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="nestable-list.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Nestable Lists
+						<li class=""><a href="../menu/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu list
+						</a> <b class="arrow"></b></li>
+
+						<li class=""><a href="eventlist"> <i
+								class="menu-icon fa fa-caret-right"></i> Event Board
+						</a> <b class="arrow"></b></li>
+
+						<li class=""><a href="../board/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Board
 						</a> <b class="arrow"></b></li>
 
 					</ul></li>
 
-				<li class="active open"><a href="#" class="dropdown-toggle">
-						<i class="menu-icon fa fa-pencil-square-o"></i> <span
+				<li class=""><a href="#" class="dropdown-toggle"> <i
+						class="menu-icon fa fa-pencil-square-o"></i> <span
 						class="menu-text"> Stores </span> <b
 						class="arrow fa fa-angle-down"></b>
 				</a> <b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class="active"><a href="admin-form-detail.html"> <i
+						<li class=""><a href="admin-form-detail.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Store Infomation
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="store_list.html"> <i
+						<li class=""><a href="branchlist"> <i
 								class="menu-icon fa fa-caret-right"></i> Store List
-						</a> <b class="arrow"></b></li>
-
-						<li class=""><a href="form-wizard.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Wizard &amp; Validation
 						</a> <b class="arrow"></b></li>
 
 						<li class=""><a href="wysiwyg.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Wysiwyg &amp; Markdown
-						</a> <b class="arrow"></b></li>
-
-						<li class=""><a href="dropzone.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Dropzone File Upload
 						</a> <b class="arrow"></b></li>
 					</ul></li>
 
@@ -557,8 +533,8 @@
 					<!-- 실제적인 내용은 여기부터 -->
 					<div class="page-header">
 						<h1>
-							게시판 정보 <small> <i
-								class="ace-icon fa fa-angle-double-right"></i> 게시판 정보 입력
+							템플릿 정보 <small> <i
+								class="ace-icon fa fa-angle-double-right"></i> 템플릿 정보 입력
 							</small>
 						</h1>
 					</div>
@@ -568,80 +544,139 @@
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
 							<form class="form-horizontal" role="form" action="insert"
-								method="post">
+								method="post" enctype="multipart/form-data">
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1-1"> 매장</label>
+									<div class="col-sm-5">
+										<select id="branch" name="branchNo">
+											<c:forEach items="${branchList}" var="branch">
+												<option value="${branch.no}">${branch.name}</option>
+											</c:forEach>
+										</select>
+									</div>
+								</div>
+
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right"
 										for="form-field-1-1"> 타입</label>
-
-									<div class="col-sm-9">
-										<input type="text" name="boardType" id="form-field-1-1"
-											placeholder="타입" class="col-xs-10 col-sm-6" />
+									<div class="col-sm-5">
+										<select id="menuTempType" name=menuTempType
+											class="col-xs-12 col-sm-11" style="height: 34px">
+											<option value="메뉴1" name="menuTempType">메뉴1</option>
+											<option value="메뉴2" name="menuTempType">메뉴2</option>
+										</select>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right"
-										for="form-field-1-2"> 관리자 </label>
-
-									<div class="col-sm-9">
-										<input type="text" name="boardManager" id="form-field-1-2"
-											placeholder="관리자" class="col-xs-10 col-sm-6" />
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right"
-										for="form-field-1-3"> 작성일 </label>
-
-									<div class="col-sm-9">
-										<input type="text" name="createDate" id="form-field-1-3"
-											placeholder="작성일" class="col-xs-10 col-sm-6" />
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right"
-										for="form-field-1-4"> 수정일 </label>
-
-									<div class="col-sm-9">
-										<input type="text" name="updateDate" id="form-field-1-4"
-											placeholder="수정일" class="col-xs-10 col-sm-6" />
+										for="form-field-1-1"> 영역</label>
+									<div class="col-sm-5">
+										<select id="type" name="menuArea" class="col-xs-12 col-sm-11"
+											style="height: 34px">
+											<option value="영역1" name="menuArea">영역1</option>
+											<option value="영역2" name="menuArea">영역2</option>
+											<option value="영역3" name="menuArea">영역3</option>
+											<option value="영역4" name="menuArea">영역4</option>
+											<option value="영역5" name="menuArea">영역5</option>
+											<option value="영역6" name="menuArea">영역6</option>
+										</select>
 									</div>
 								</div>
 
 								<div class="space-4"></div>
-
-								<div class="row">
-									<div class="col-xs-12 col-sm-3"></div>
-									<div class="col-xs-12 col-sm-6">
-										<div class="widget-box">
-											<div class="widget-header">
-												<h4 class="widget-title">게시판 특이 사항 메모</h4>
-
-												<div class="widget-toolbar">
-													<a href="#" data-action="collapse"> <i
-														class="ace-icon fa fa-chevron-up"></i>
-													</a> <a href="#" data-action="close"> <i
-														class="ace-icon fa fa-times"></i>
-													</a>
-												</div>
-											</div>
-
-											<div class="widget-body">
-												<div class="widget-main">
-													<div class="form-group">
-														<div class="col-xs-12">
-															<textarea name="boardComment" style="resize: none"
-																rows="6" cols="72"></textarea>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-3"></div>
+								<div class="6u 12u$(xsmall)">
+									<h4>상세 메뉴정보 설정</h4>
 								</div>
+								<!-- 메뉴보드 상세등록은 아코디언 형식으로! UI 깔끔하게 많은 정보를 입력! -->
+								<div class="12u$">
+									<!-- 위에서 템플릿 선택한것에 따라 메뉴 수 만큼 panel panel-defult 출력 -->
+									<div class="accordion-style1 panel-group" id="accordian">
+										<div class="panel panel-defult">
+											<div class="panel-heading">
+												<h4 class="panel-title">
 
+													<a class="accordion-toggle" data-toggle="collapse"
+														data-parent="#accordion" href="#collapseOne"> <i
+														class="ace-icon fa fa-angle-down bigger-110"
+														data-icon-hide="ace-icon fa fa-angle-down"
+														data-icon-show="ace-icon fa fa-angle-right"></i> &nbsp;메뉴
+														#1
+													</a>
+												</h4>
+											</div>
+
+											<!-- 첫 인덱스는 반드시 class명 뒤에 in 필요! 각 클래스별 id값 다르니 주의!(id="collapseOne") -->
+											<div class="panel-collapse collapse in" id="collapseOne">
+												<div class="panel-body">
+													<div class="widget-main">
+														<div class="row">
+															<div class="col-xs-12 col-sm-6">
+																<div class="image fit">
+																	<img class="img-thumbnail" id="output1"
+																		alt="menuboard #1 image"
+																		src="../download/${list.menuImage}" />
+																</div>
+															</div>
+
+															<div class="col-xs-12 col-sm-6">
+
+																<div class="form-group">
+																	<label for="menuTitle"> 메뉴명</label>
+																	<div>
+																		<select class="col-xs-10" id="menuName"
+																			name="menuName" data-placeholder="메뉴">
+																			<option value="none">- 메뉴 선택 -</option>
+																			<c:forEach items="${menuList}" var="list">
+																				<option value="${list.menuName}">${list.menuName}</option>
+																			</c:forEach>
+																		</select>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label for="menuDivision">메뉴분류</label>
+																	<div>
+																		<input type="text" class="col-xs-10" name="menuType"
+																			id="menuType" value="" placeholder="메뉴 분류" />
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label for="menuTitle"> 가격</label>
+																	<div>
+																		<input type="text" class="col-xs-10" name="menuPrice"
+																			id="menuPrice" value="" placeholder="메뉴 가격 출력" />
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label for="menuEtc"> 기타사항</label>
+																	<div>
+																		<input type="text" class="col-xs-10" id="menuContent"
+																			name="menuContent"
+																			placeholder="기타사항 출력 예) 원산지, 칼로리, 외국어표기 등" />
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!-- row 끝-->
+
+													</div>
+													<!-- widget-main 끝-->
+												</div>
+												<!-- panel-body 끝-->
+											</div>
+											<!-- panel-collapse collapse in끝-->
+										</div>
+										<!-- panel panel-defult 끝-->
+
+
+									</div>
+									<!-- accordion-style1 panel-group 끝-->
+								</div>
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
 										<button class="btn btn-info" id="active" type="submit">
@@ -652,7 +687,8 @@
 											<i class="ace-icon fa fa-undo bigger-110"></i> 리셋
 										</button>
 										&nbsp; &nbsp;
-										<button class="btn btn-danger" type="button" onclick="doDelete()">
+										<button class="btn btn-danger" type="button"
+											onclick="doDelete(${item.templateNo})">
 											<i class="ace-icon fa fa-exclamation-circle bigger-110"></i>
 											삭제
 										</button>
@@ -699,11 +735,11 @@
 	</div>
 	<script>
 	function doList(){
-        location.href="../board/list";
+        location.href="../template/list";
     }
 	
-    function doDelete(){
-        location.href="../board/delete?boardManageNo=${boardList.boardManageNo}";
+    function doDelete(templateNo){
+        location.href="../template/delete?templateNo="+ templateNo;
     }
 	</script>
 	<!-- /.main-container -->
@@ -711,29 +747,57 @@
 	<!-- basic scripts -->
 	<!-- 이 영역 if IE 처리 되어 있는데 왜? -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-2.1.4.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-2.1.4.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/bootstrap.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-ui.custom.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-ui.custom.min.js"></script>
 	<!-- 여기까지 -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/chosen.jquery.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/chosen.jquery.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.knob.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.knob.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/autosize.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/autosize.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.inputlimiter.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.inputlimiter.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.maskedinput.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.maskedinput.min.js"></script>
 	<!-- ace scripts -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-elements.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace.min.js"></script>
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
+	
+	var menuList = {};
+    <c:forEach items="${menuList}" var="menu">
+    menuList['${menu.menuName}'] = {
+      /* menuNo:'${menu.menuNo}', */
+      menuType:'${menu.menuType}',
+      menuName:'${menu.menuName}',
+      menuPrice:'${menu.menuPrice}',
+      menuContent:'${menu.menuContent}',
+      fileName:'${menu.menuImage.fileName}' 
+    };
+    </c:forEach>
+    
+    var mtype = document.getElementById("menuType");
+    var mprice = document.getElementById("menuPrice");
+    var mcontent = document.getElementById("menuContent");
+    var fileName = document.getElementById("output1");
+
+    $('#menuName').on('change', function() {
+      var menuName = $(this).prop('value');
+      mtype.value = (menuList[menuName].menuType);
+      mprice.value = (menuList[menuName].menuPrice);
+      mcontent.value = (menuList[menuName].menuContent);
+      fileName.value = (menuList[menuName].fileName);
+    })
+	    
+    
+	
 		$(function() {
 			$('#id-disable-check').on('click', function() {
 				var inp = $('#form-input-readonly').get(0);
@@ -803,23 +867,6 @@
 				limitText : 'max allowed : %n.'
 			});
 
-			//chosen plugin inside a modal will have a zero width because the select element is originally hidden
-			//and its width cannot be determined.
-			//so we set the width after modal is show
-			$('#modal-form').on(shown.bs.modal',
-				    function() {
-						if (!ace.vars['touch']) {
-							$(this).find('.chosen-container').each(
-									function() {
-										$(this).find('a:first-child').css(
-												'width', '210px');
-										$(this).find('.chosen-drop').css(
-												'width', '210px');
-										$(this).find('.chosen-search input')
-												.css('width', '200px');
-									});
-						}
-					})
     
 			$(document).one('ajaxloadstart.page',function(e) {
 				autosize.destroy('textarea[class*=autosize]')

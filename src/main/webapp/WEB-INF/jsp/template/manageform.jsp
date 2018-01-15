@@ -11,27 +11,27 @@
 
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/bootstrap.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/bootstrap.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/font-awesome.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
 
 <!-- page specific plugin styles -->
 
 <!-- text fonts -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 
 <!-- ace styles -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/ace.min.css"
+	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
 	class="ace-main-stylesheet" id="main-ace-style" />
 
 <!-- Favicon and touch icons -->
 <link rel="icon"
-	href="${pageContext.servletContext.contextPath}/resources/ico/home_iot.png">
+	href="${pageContext.servletContext.contextPath}/ico/home_iot.png">
 <!-- ace settings handler -->
 <script
-	src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-extra.min.js"></script>
+	src="${pageContext.servletContext.contextPath}/assets/js/ace-extra.min.js"></script>
 </head>
 
 <body class="no-skin">
@@ -545,7 +545,7 @@
 								상세정보</div></span> <span class="col-xs-3">
 							<button class="btn btn-white btn-primary btn-bold">
 								<i class="ace-icon fa fa-cloud-upload hidden-480"></i><a
-									href='../template/infoPage'>템플릿 정보 등록</a>
+									href='../template/registform'>템플릿 정보 등록</a>
 							</button>
 						</span>
 					</div>
@@ -795,27 +795,27 @@
 
 	<!--[if !IE]> -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-2.1.4.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-2.1.4.min.js"></script>
 
 	<!-- <![endif]-->
 
 	<!--[if IE]>
-<script src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-1.11.3.min.js"></script>
+<script src="${pageContext.servletContext.contextPath}/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 	<script type="text/javascript">
-        if ('ontouchstart' in document.documentElement) document.write("<script src='${pageContext.servletContext.contextPath}/resources/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+        if ('ontouchstart' in document.documentElement) document.write("<script src='${pageContext.servletContext.contextPath}/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
   </script>
 
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/bootstrap.min.js"></script>
 
 	<!-- page specific plugin scripts -->
 
 	<!-- ace scripts -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-elements.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace.min.js"></script>
 
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">

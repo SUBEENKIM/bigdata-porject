@@ -5,25 +5,57 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Store List Admin</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>게시판 추가</title>
 
-    <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/assets/css/font-awesome.min.css" />
+<!-- bootstrap & fontawesome -->
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/assets/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
 
-    <!-- page specific plugin styles -->
+<!-- page specific plugin styles -->
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/assets/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/assets/css/chosen.min.css" />
 
-    <!-- text fonts -->
-    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+<!-- text fonts -->
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 
-    <!-- ace styles -->
-    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+<!-- ace styles -->
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
+	class="ace-main-stylesheet" id="main-ace-style" />
 
-    <!-- Favicon and touch icons -->
-    <link rel="icon" href="${pageContext.servletContext.contextPath}/resources/ico/home_iot.png">
-    <!-- ace settings handler -->
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-extra.min.js"></script>
+<!-- Favicon and touch icons -->
+<link rel="icon"
+	href="${pageContext.servletContext.contextPath}/ico/home_iot.png">
+
+<style>
+.image {
+	border: 0;
+	display: inline-block;
+	position: relative;
+	box-shadow: 0px 0px 0px 7px #fff, 0px 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image.fit {
+	display: block;
+	margin: 0 0 2em 0;
+	width: 100%;
+}
+
+.image.fit img {
+	width: 100%;
+}
+</style>
+
+<!-- ace settings handler -->
+<script
+	src="${pageContext.servletContext.contextPath}/assets/js/ace-extra.min.js"></script>
 </head>
 
 <body class="no-skin">
@@ -274,20 +306,20 @@
 
 	<div class="main-container ace-save-state" id="main-container">
 		<script type="text/javascript">
-            try {
-                ace.settings.loadState('main-container')
-            } catch (e) {
-            }
-        </script>
+			try {
+				ace.settings.loadState('main-container')
+			} catch (e) {
+			}
+		</script>
 
 		<div id="sidebar"
 			class="sidebar                  responsive                    ace-save-state">
 			<script type="text/javascript">
-                try {
-                    ace.settings.loadState('sidebar')
-                } catch (e) {
-                }
-            </script>
+				try {
+					ace.settings.loadState('sidebar')
+				} catch (e) {
+				}
+			</script>
 
 			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
@@ -378,11 +410,11 @@
 				</a> <b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class=""><a href="admin-form-detail.html"> <i
+						<li class="active"><a href="admin-form-detail.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Store Infomation
 						</a> <b class="arrow"></b></li>
 
-						<li class="active"><a href="store_list.html"> <i
+						<li class=""><a href="store_list.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Store List
 						</a> <b class="arrow"></b></li>
 
@@ -454,7 +486,7 @@
 						<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Home</a>
 						</li>
 						<li><a href="#">Stores</a></li>
-						<li class="active">Store List</li>
+						<li class="active">Store Infomation</li>
 					</ul>
 					<!-- /.breadcrumb -->
 
@@ -522,256 +554,92 @@
 					<!-- /.ace-settings-container -->
 
 
-					<!-- 실제적인 내용은 여기부터 넣으면 됨!! -->
+					<!-- 실제적인 내용은 여기부터 -->
 					<div class="page-header">
 						<h1>
-							게시판 리스트 <small> <i
-								class="ace-icon fa fa-angle-double-right"></i> 각 게시판 정보
+							게시판 정보 <small> <i
+								class="ace-icon fa fa-angle-double-right"></i> 게시판 정보 입력
 							</small>
 						</h1>
 					</div>
 					<!-- /.page-header -->
 
-					<!-- 타이틀과 매장 추가버튼 -->
-					<div class="row">
-						<span class="col-xs-9"><div class="table-header">게시판
-								상세정보</div></span> <span class="col-xs-3">
-							<button class="btn btn-white btn-primary btn-bold">
-								<i class="ace-icon fa fa-cloud-upload hidden-480"></i><a
-									href='../board/registform'>게시판 추가</a>
-							</button>
-						</span>
-					</div>
-					<!-- table을 위한 바깥 div 시작 -->
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<div class="row">
-								<div class="col-xs-12">
-									<!-- table 시작 -->
-									<table id="simple-table"
-										class="table  table-bordered table-hover">
-										<thead>
-											<tr>
-												<th class="center"><label class="pos-rel"> <input
-														type="checkbox" class="ace" /> <span class="lbl"></span>
-												</label></th>
-												<th class="detail-col">상세</th>
-												<th class="hidden-480">번호</th>
-												<th class="hidden-480">분류</th>
-												<th class="hidden-480">관리자</th>
-												<th>등록일</th>
-												<th class="hidden-480">setting</th>
-											</tr>
-										</thead>
-										<!-- table body 시작 -->
-										<tbody id="store-tbody">
-											<c:forEach items="${boardList}" var="item">
-												<!-- 객체 전체에 걸쳐 반복 실행? /c:forEach까지 -->
-												<c:choose>
-												    <c:when test="${item.deleteCheck eq 'N'}">
-												<tr>
-													<td class="center"><label class="pos-rel"> <input
-															type="checkbox" class="ace" id="checkbox1"
-															name="ckbSelect" value="" /> <span class="lbl"></span>
-													</label></td>
-													<td class="center">
-														<div class="action-buttons">
-															<a href="#" class="green bigger-140 show-details-btn"
-																title="Show Details"> <i
-																class="ace-icon fa fa-angle-double-down"></i> <span
-																class="sr-only">Details</span>
-															</a>
-														</div>
-													</td>
-													<td class="hidden-480">${item.boardNo}</td>
-													<td class="hidden-480">${item.boardType}</td>
-													<td class="hidden-480">${item.boardManager}</td>
-													<td>${item.boardCreateDay}</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" id="search-btn">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-															<button class="btn btn-xs btn-info" onclick="edit()">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-															<button class="btn btn-xs btn-danger" onclick="doDelete(${item.boardNo})">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-														</div> <!-- 테블릿 or 핸드폰 화면전용 -->
-														<div class="hidden-md hidden-lg">
-															<div class="inline pos-rel">
-																<button
-																	class="btn btn-minier btn-primary dropdown-toggle"
-																	data-toggle="dropdown" data-position="auto">
-																	<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-																</button>
+							<form class="form-horizontal" role="form" action="insert"
+								method="post">
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1-1"> 타입</label>
 
-																<ul
-																	class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-																	<li><a href="#" class="tooltip-info"
-																		data-rel="tooltip" title="View"> <span
-																			class="blue"> <i
-																				class="ace-icon fa fa-search-plus bigger-120"></i>
-																		</span>
-																	</a></li>
-
-																	<li><a href="#" class="tooltip-success"
-																		data-rel="tooltip" title="Edit"> <span
-																			class="green"> <i
-																				class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																		</span>
-																	</a></li>
-
-																	<li><a href="#" class="tooltip-error"
-																		data-rel="tooltip" title="Delete" id="btnDelete"
-																		name="btnDelete"> <span class="red"> <i
-																				class="ace-icon fa fa-trash-o bigger-120"></i>
-																		</span>
-																	</a></li>
-																</ul>
-															</div>
-														</div> <!-- 테블릿,핸드폰 전용 div끝 -->
-													</td>
-												</tr>
-												<!-- 상세정보 페이지!! -->
-												<tr class="detail-row">
-													<td colspan="8">
-														<div class="table-detail">
-															<div class="row">
-																<div class="col-xs-12 col-sm-2">
-																	<div class="text-center">
-																		<img height="150"
-																			class="thumbnail inline no-margin-bottom"
-																			alt="store image" src="images/restaurants.jpg" /> <br />
-																		<div class="label label-info label-xlg">
-																			<div class="inline position-relative">
-																				<a class="user-title-label" href="#"> <i
-																					class="ace-icon fa fa-cutlery light-green"></i> <span
-																					class="white">Board Information</span>
-																				</a>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-
-																<div class="col-xs-12 col-sm-7">
-																	<div class="space visible-xs"></div>
-																	<div
-																		class="profile-user-info profile-user-info-striped">
-																		<div class="profile-info-row">
-																			<div class="profile-info-name">게시판 분류</div>
-
-																			<div class="profile-info-value">
-																				<i class="fa fa-map-marker light-orange bigger-110"></i>
-																				<span>${item.boardType}</span>
-																			</div>
-																		</div>
-
-																		<div class="profile-info-row">
-																			<div class="profile-info-name">게시글 등록수</div>
-
-																			<div class="profile-info-value">
-																				<span>${count}</span>
-																			</div>
-																		</div>
-
-																		<div class="profile-info-row">
-																			<div class="profile-info-name">등록일</div>
-
-																			<div class="profile-info-value">
-																				<span>${item.boardCreateDay}</span>
-																			</div>
-																		</div>
-
-																		<div class="profile-info-row">
-																			<div class="profile-info-name">최근 수정일</div>
-
-																			<div class="profile-info-value">
-																				<span>${item.boardUpdateDay}</span>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-
-																<div class="col-xs-12 col-sm-3">
-																	<div class="space visible-xs"></div>
-																	<h4 class="header blue lighter less-margin">게시판 정보</h4>
-																	<div class="space-6"></div>
-
-																	<form>
-																		<fieldset>
-																			<textarea class="width-100" resize="none"
-																				name="manageContent"
-																				placeholder="${item.boardComment}"></textarea>
-																		</fieldset>
-
-																		<div class="hr hr-dotted"></div>
-
-																		<div class="clearfix">
-																			<label class="pull-left"> <input
-																				id="sendMbtn" type="checkbox" class="ace" /> <span
-																				class="lbl"> 메모 저장</span>
-																			</label>
-
-																			<button
-																				class="pull-right btn btn-sm btn-primary btn-white btn-round"
-																				type="button">
-																				확인 <i
-																					class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-																			</button>
-																		</div>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</td>
-												</tr>
-												</c:when>
-												<c:otherwise>
-												</c:otherwise>
-												</c:choose>
-											</c:forEach>
-											<!-- forEach 반복 끝? -->
-										</tbody>
-										<!-- table body 끝 -->
-									</table>
-									<div class="align-center">
-										<ul class="pagination">
-											<c:if test="${paging.curGroup > 1}">
-												<li><a href="#" onclick="list('1')">Start</a></li>
-											</c:if>
-											<c:if test="${paging.curGroup > 1}">
-												<li><a href="#" onclick="list(${paging.prevPage})">Prev</a></li>
-											</c:if>
-											<c:forEach var="num" begin="${paging.groupStart}"
-												end="${paging.groupEnd}">
-												<c:choose>
-													<c:when test="${num == paging.curPage}">
-														<span style="color: red">${num}</span>&nbsp;
-                                                    </c:when>
-													<c:otherwise>
-														<a href="#" onclick="list(${num})">${num}</a>&nbsp;
-                                                    </c:otherwise>
-												</c:choose>
-											</c:forEach>
-											<c:if test="${paging.curGroup <= paging.totGroup}">
-												<li><a href="#" onclick="list(${paging.nextPage})">Next</a></li>
-											</c:if>
-											<c:if test="${paging.curPage <= paging.totPage}">
-												<li><a href="#" onclick="list(${paging.totPage})">End</a></li>
-											</c:if>
-										</ul>
+									<div class="col-sm-9">
+										<select name="category" id="form-field-1-1"
+											class="col-xs-10 col-sm-6">
+											<option name="category" value="none">-- 게시판 분류 --</option>
+											<option name="category" value="자유게시판">자유게시판</option>
+											<option name="category" value="Q&A">Q&A</option>
+										</select>
 									</div>
-									<!-- table 끝 -->
 								</div>
-								<!-- /.span -->
-							</div>
-							<!-- /.row -->
 
-							<!-- PAGE CONTENT ENDS -->
+								<div class="space-4"></div>
 
+								<div class="row">
+									<div class="col-xs-12 col-sm-3"></div>
+									<div class="col-xs-12 col-sm-6">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title">게시판 특이 사항 메모</h4>
+
+												<div class="widget-toolbar">
+													<a href="#" data-action="collapse"> <i
+														class="ace-icon fa fa-chevron-up"></i>
+													</a> <a href="#" data-action="close"> <i
+														class="ace-icon fa fa-times"></i>
+													</a>
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<div class="form-group">
+														<div class="col-xs-12">
+															<textarea name="boardInformation" style="resize: none"
+																rows="6" cols="72"></textarea>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-3"></div>
+								</div>
+
+								<div class="clearfix form-actions">
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info" id="active" type="submit">
+											<i class="ace-icon fa fa-hand-o-right bigger-110"></i> 적용
+										</button>
+										&nbsp; &nbsp;
+										<button class="btn" type="reset">
+											<i class="ace-icon fa fa-undo bigger-110"></i> 리셋
+										</button>
+										&nbsp; &nbsp;
+										<button class="btn btn-danger" type="button"
+											onclick="doDelete()">
+											<i class="ace-icon fa fa-exclamation-circle bigger-110"></i>
+											삭제
+										</button>
+
+										&nbsp; &nbsp;
+										<button class="btn btn-success" type="button"
+											onclick="doList()">
+											<i class="ace-icon fa fa-folder-open-o bigger-110"></i> 목록
+										</button>
+									</div>
+								</div>
+							</form>
 						</div>
 						<!-- /.col -->
 					</div>
@@ -783,130 +651,158 @@
 		<!-- /.main-content -->
 
 		<div class="footer">
-            <div class="footer-inner">
-                <div class="footer-content">
-                    <span class="bigger-120">
-                            <span class="blue bolder">Ace</span> Application &copy; 2013-2014
-                    </span>
+			<div class="footer-inner">
+				<div class="footer-content">
+					<span class="bigger-120"> <span class="blue bolder">Ace</span>
+						Application &copy; 2013-2014
+					</span> &nbsp; &nbsp; <span class="action-buttons"> <a href="#">
+							<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+					</a> <a href="#"> <i
+							class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+					</a> <a href="#"> <i
+							class="ace-icon fa fa-rss-square orange bigger-150"></i>
+					</a>
+					</span>
+				</div>
+			</div>
+		</div>
 
-                    &nbsp; &nbsp;
-                    <span class="action-buttons">
-                            <a href="#">
-                                <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                            </a>
+		<a href="#" id="btn-scroll-up"
+			class="btn-scroll-up btn btn-sm btn-inverse"> <i
+			class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+		</a>
+	</div>
+	<script>
+	function doList(){
+        location.href="../board/list";
+    }
+	
+    function doDelete(){
+        location.href="../board/delete?boardManageNo=${boardList.boardManageNo}";
+    }
+	</script>
+	<!-- /.main-container -->
 
-                            <a href="#">
-                                <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-                            </a>
+	<!-- basic scripts -->
+	<!-- 이 영역 if IE 처리 되어 있는데 왜? -->
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-2.1.4.min.js"></script>
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/bootstrap.min.js"></script>
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-ui.custom.min.js"></script>
+	<!-- 여기까지 -->
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/chosen.jquery.min.js"></script>
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.knob.min.js"></script>
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/autosize.min.js"></script>
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.inputlimiter.min.js"></script>
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.maskedinput.min.js"></script>
+	<!-- ace scripts -->
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
+	<script
+		src="${pageContext.servletContext.contextPath}/assets/js/ace.min.js"></script>
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		$(function() {
+			$('#id-disable-check').on('click', function() {
+				var inp = $('#form-input-readonly').get(0);
+				if (inp.hasAttribute('disabled')) {
+					inp.setAttribute('readonly', 'true');
+					inp.removeAttribute('disabled');
+					inp.value = "This text field is readonly!";
+				} else {
+					inp.setAttribute('disabled', 'disabled');
+					inp.removeAttribute('readonly');
+					inp.value = "This text field is disabled!";
+				}
+			});
 
-                            <a href="#">
-                                <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-                            </a>
-                        </span>
-                </div>
-            </div>
-        </div>
+			if (!ace.vars['touch']) {
+				$('.chosen-select').chosen({
+					allow_single_deselect : true
+				});
+				//resize the chosen on window resize
 
-        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-            </a>
-    </div> <!-- /.main-container -->
+				$(window).off('resize.chosen').on('resize.chosen', function() {
+					$('.chosen-select').each(function() {
+						var $this = $(this);
+						$this.next().css({
+							'width' : $this.parent().width()
+						});
+					})
+				}).trigger('resize.chosen');
+				//resize chosen on sidebar collapse/expand
+				$(document).on('settings.ace.chosen',
+						function(e, event_name, event_val) {
+							if (event_name != 'sidebar_collapsed')
+								return;
+							$('.chosen-select').each(function() {
+								var $this = $(this);
+								$this.next().css({
+									'width' : $this.parent().width()
+								});
+							})
+						});
 
-    <!-- basic scripts -->
+				$('#chosen-multiple-style .btn').on(
+						'click',
+						function(e) {
+							var target = $(this).find('input[type=radio]');
+							var which = parseInt(target.val());
+							if (which == 2)
+								$('#form-field-select-4').addClass(
+										'tag-input-style');
+							else
+								$('#form-field-select-4').removeClass(
+										'tag-input-style');
+						});
+			}
 
-    <!--[if !IE]> -->
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-2.1.4.min.js"></script>
+			$('[data-rel=tooltip]').tooltip({
+				container : 'body'
+			});
+			$('[data-rel=popover]').popover({
+				container : 'body'
+			});
 
-    <!-- <![endif]-->
+			autosize($('textarea[class*=autosize]'));
 
-    <!--[if IE]>
-<script src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
-    <script type="text/javascript">
-        if ('ontouchstart' in document.documentElement) document.write("<script src='${pageContext.servletContext.contextPath}/resources/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
-    </script>
-    <script>
-        function doDelete(boardNo) {
-          location.href = '../board/delete?boardNo='+boardNo
-        }
-    </script>
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+			$('textarea.limited').inputlimiter({
+				remText : '%n character%s remaining...',
+				limitText : 'max allowed : %n.'
+			});
 
-    <!-- page specific plugin scripts -->
-
-    <!-- ace scripts -->
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-elements.min.js"></script>
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/ace.min.js"></script>
-
-    <!-- inline scripts related to this page -->
-    <script type="text/javascript">
-    jQuery(function($) {
-                //select/deselect all rows according to table header checkbox
-                var active_class = 'active';
-                $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
-                    var th_checked = this.checked;//checkbox inside TH table header
-                    
-                    $(this).closest('table').find('tbody > tr').each(function(){
-                        var row = this;
-                        if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
-                        else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
-                    });
-                });
-                
-                //select or deselect a row when the checkbox is checked or unchecked
-                $('#simple-table').on('click', 'td input[type=checkbox]' , function(){
-                    var $row = $(this).closest('tr');
-                    if($row.is('.detail-row ')) return;
-                    if(this.checked) $row.addClass(active_class);
-                    else $row.removeClass(active_class);
-                });
-            
-            /********************************/
-                //add tooltip for small view action buttons in dropdown menu
-                $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
-                
-                //tooltip placement on right or left
-                function tooltip_placement(context, source) {
-                    var $source = $(source);
-                    var $parent = $source.closest('table')
-                    var off1 = $parent.offset();
-                    var w1 = $parent.width();
-            
-                    var off2 = $source.offset();
-                    
-            
-                    if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-                    return 'left';
-                }
-        
-            /***************/
-                $('.show-details-btn').on('click', function(e) {
-                    e.preventDefault();
-                    $(this).closest('tr').next().toggleClass('open');
-                    $(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
-                });
-                /***************/
-        
-                $(document).ready(function() {
-            /*----------------------------------------------------------------
-            * 키값 rowTag로 테이블의 기본 row 값의 Html태그 저장
-            -----------------------------------------------------------------*/
-                    var rowTag = $("table tbody").html();
-                    $(".simple-table").data("rowTag", rowTag); //키값 rowTag로 테이블의 기본 row 값의 Html태그 저장
-                });
-            /* ********************************************************
-                * 체크박스 현재행 삭제 기능 => 현재 에러남...
-            ******************************************************** */ 
-                        function rowDelete(obj) {
-                        $("tbody td input[type=checkbox] :checked").each(function() {
-                        $(this).parent().parent().remove()
-                            });
-                        }
-        
-        
-        
-        })
-    </script>
+			//chosen plugin inside a modal will have a zero width because the select element is originally hidden
+			//and its width cannot be determined.
+			//so we set the width after modal is show
+			$('#modal-form').on(shown.bs.modal',
+				    function() {
+						if (!ace.vars['touch']) {
+							$(this).find('.chosen-container').each(
+									function() {
+										$(this).find('a:first-child').css(
+												'width', '210px');
+										$(this).find('.chosen-drop').css(
+												'width', '210px');
+										$(this).find('.chosen-search input')
+												.css('width', '200px');
+									});
+						}
+					})
     
+			$(document).one('ajaxloadstart.page',function(e) {
+				autosize.destroy('textarea[class*=autosize]')
+				$('.limiterBox,.autosizejs').remove();
+				$('.daterangepicker.dropdown-menu,.colorpicker.dropdown-menu,.bootstrap-datetimepicker-widget.dropdown-menu').remove();
+			});
+		});
+		
+	</script>
 </body>
 </html>

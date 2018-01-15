@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/assets/css/clientboard.css" />
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/assets/css/clientboard.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>게시판 글 확인</title>
@@ -83,11 +83,11 @@
     </div>
     
     
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.scrolly.min.js"></script>
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.scrollex.min.js"></script>
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/skel.min.js"></script>
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/util.js"></script>
-    <script src="${pageContext.servletContext.contextPath}/resources/assets/js/main.js"></script>
+    <script src="${pageContext.servletContext.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+    <script src="${pageContext.servletContext.contextPath}/assets/js/jquery.scrollex.min.js"></script>
+    <script src="${pageContext.servletContext.contextPath}/assets/js/skel.min.js"></script>
+    <script src="${pageContext.servletContext.contextPath}/assets/js/util.js"></script>
+    <script src="${pageContext.servletContext.contextPath}/assets/js/main.js"></script>
     <script>
         /*
         $(function() {

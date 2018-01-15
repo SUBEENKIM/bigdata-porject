@@ -1,34 +1,35 @@
 package bigdata3.domain;
 
-import java.util.Date;
+import java.sql.Date;
 
-public class MenuTemplate {
-  private int templateNo;
+public class MenuTemplate extends Menu {
+  // 여기에 지점 참조해야함
+  private int menuTempNo;
   private String branchName;
-  private String templateType;
-  private String templateArea;
-  private String templateContent;
-  private String menuType;
+  private String menuArea;
+  private String menuTempType;
   private String menuName;
+  private String menuType;
   private String menuPrice;
-  private String menuKcal;
+  private String menuContent;
+  private String image;
   private Date createDate;
-  private Date updateDate;
+  private String deleteCheck;
 
   @Override
   public String toString() {
-    return "Template [templateNo=" + templateNo + ", branchName=" + branchName + ", templateType=" + templateType
-        + ", templateArea=" + templateArea + ", templateContent=" + templateContent + ", menuType=" + menuType
-        + ", menuName=" + menuName + ", menuPrice=" + menuPrice + ", menuKcal=" + menuKcal + ", createDate="
-        + createDate + ", updateDate=" + updateDate + "]";
+    return "MenuTemplate [menuTempNo=" + menuTempNo + ", branchName=" + branchName + ", menuArea=" + menuArea
+        + ", menuTempType=" + menuTempType + ", menuName=" + menuName + ", menuType=" + menuType + ", menuPrice="
+        + menuPrice + ", menuContent=" + menuContent + ", image=" + image + ", createDate=" + createDate
+        + ", deleteCheck=" + deleteCheck + "]";
   }
 
-  public int getTemplateNo() {
-    return templateNo;
+  public int getMenuTempNo() {
+    return menuTempNo;
   }
 
-  public void setTemplateNo(int templateNo) {
-    this.templateNo = templateNo;
+  public void setMenuTempNo(int menuTempNo) {
+    this.menuTempNo = menuTempNo;
   }
 
   public String getBranchName() {
@@ -39,36 +40,20 @@ public class MenuTemplate {
     this.branchName = branchName;
   }
 
-  public String getTemplateType() {
-    return templateType;
+  public String getMenuArea() {
+    return menuArea;
   }
 
-  public void setTemplateType(String templateType) {
-    this.templateType = templateType;
+  public void setMenuArea(String menuArea) {
+    this.menuArea = menuArea;
   }
 
-  public String getTemplateArea() {
-    return templateArea;
+  public String getMenuTempType() {
+    return menuTempType;
   }
 
-  public void setTemplateArea(String templateArea) {
-    this.templateArea = templateArea;
-  }
-
-  public String getTemplateContent() {
-    return templateContent;
-  }
-
-  public void setTemplateContent(String templateContent) {
-    this.templateContent = templateContent;
-  }
-
-  public String getMenuType() {
-    return menuType;
-  }
-
-  public void setMenuType(String menuType) {
-    this.menuType = menuType;
+  public void setMenuTempType(String menuTempType) {
+    this.menuTempType = menuTempType;
   }
 
   public String getMenuName() {
@@ -79,6 +64,14 @@ public class MenuTemplate {
     this.menuName = menuName;
   }
 
+  public String getMenuType() {
+    return menuType;
+  }
+
+  public void setMenuType(String menuType) {
+    this.menuType = menuType;
+  }
+
   public String getMenuPrice() {
     return menuPrice;
   }
@@ -87,12 +80,20 @@ public class MenuTemplate {
     this.menuPrice = menuPrice;
   }
 
-  public String getMenuKcal() {
-    return menuKcal;
+  public String getMenuContent() {
+    return menuContent;
   }
 
-  public void setMenuKcal(String menuKcal) {
-    this.menuKcal = menuKcal;
+  public void setMenuContent(String menuContent) {
+    this.menuContent = menuContent;
+  }
+
+  public String getImage() {
+    return image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
   }
 
   public Date getCreateDate() {
@@ -103,12 +104,12 @@ public class MenuTemplate {
     this.createDate = createDate;
   }
 
-  public Date getUpdateDate() {
-    return updateDate;
+  public String getDeleteCheck() {
+    return deleteCheck;
   }
 
-  public void setUpdateDate(Date updateDate) {
-    this.updateDate = updateDate;
+  public void setDeleteCheck(String deleteCheck) {
+    this.deleteCheck = deleteCheck;
   }
 
 }

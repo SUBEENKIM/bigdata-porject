@@ -1,38 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Menu Mgt Admin</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<title>템플릿 정보 등록</title>
 
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/bootstrap.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/bootstrap.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/font-awesome.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
 
 <!-- page specific plugin styles -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/jquery-ui.custom.min.css" />
-<link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/chosen.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/jquery-ui.custom.min.css" />
 
 <!-- text fonts -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 
 <!-- ace styles -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/ace.min.css"
+	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
 	class="ace-main-stylesheet" id="main-ace-style" />
 
 <!-- Favicon and touch icons -->
-<link rel="icon"
-	href="${pageContext.servletContext.contextPath}/resources/ico/home_iot.png">
+<link rel="icon" href="ico/home_iot.png">
 
 <style>
 .image {
@@ -54,8 +52,7 @@
 </style>
 
 <!-- ace settings handler -->
-<script
-	src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-extra.min.js"></script>
+<script src="${pageContext.servletContext.contextPath}/assets/js/ace-extra.min.js"></script>
 </head>
 
 <body class="no-skin">
@@ -70,7 +67,7 @@
 
 			<div class="navbar-header pull-left">
 				<a href="index_admin.html" class="navbar-brand"> <small>
-						<i class="fa fa-leaf"></i> Donny Admin
+						<i class="fa fa-leaf"></i> Bigdata3 Admin
 				</small>
 				</a>
 			</div>
@@ -211,10 +208,10 @@
 							<li class="dropdown-content">
 								<ul class="dropdown-menu dropdown-navbar">
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar.png" class="msg-photo"
-											alt="Alex's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">민국:</span> 어제도
-													하얗게 불살났어 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar.png"
+											class="msg-photo" alt="Alex's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">민국:</span> 어제도 하얗게 불살났어 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>a moment
 														ago</span>
@@ -223,10 +220,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar3.png" class="msg-photo"
-											alt="Susan's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">연주:</span> 챗봇
-													기능에 추가 업데이트가 필요할 것 같아요 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar3.png"
+											class="msg-photo" alt="Susan's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">연주:</span> 챗봇 기능에 추가 업데이트가 필요할 것 같아요 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>20 minutes
 														ago</span>
@@ -235,10 +232,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar4.png" class="msg-photo"
-											alt="Bob's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">수빈:</span> 관리자
-													페이지에 새로운 기능을 추가했어요 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar4.png"
+											class="msg-photo" alt="Bob's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">수빈:</span> 관리자 페이지에 새로운 기능을 추가했어요 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>3:15 pm</span>
 											</span>
@@ -246,10 +243,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar2.png" class="msg-photo"
-											alt="Kate's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">종학:</span> 빅데이터
-													분석에 따른 시각화 세부사항 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar2.png"
+											class="msg-photo" alt="Kate's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">종학:</span> 빅데이터 분석에 따른 시각화 세부사항 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>1:33 pm</span>
 											</span>
@@ -257,10 +254,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar5.png" class="msg-photo"
-											alt="Fred's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">동석:</span> 어제도
-													할게 많았지만 오늘은 더 많다 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar5.png"
+											class="msg-photo" alt="Fred's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">동석:</span> 어제도 할게 많았지만 오늘은 더 많다 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>10:09 am</span>
 											</span>
@@ -350,84 +347,60 @@
 			<!-- /.sidebar-shortcuts -->
 
 			<ul class="nav nav-list">
-				<li class="active"><a href="index_admin.html"> <i
+				<li class="active"><a href="main"> <i
 						class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
 							Dashboard </span>
 				</a> <b class="arrow"></b></li>
 
 				<li class=""><a href="#" class="dropdown-toggle"> <i
 						class="menu-icon fa fa-bar-chart-o"></i> <span class="menu-text">
-							UI &amp; Elements </span> <b class="arrow fa fa-angle-down"></b>
+							Board Mgt </span> <b class="arrow fa fa-angle-down"></b>
 				</a> <b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class=""><a href="#" class="dropdown-toggle"> <i
-								class="menu-icon fa fa-caret-right"></i> Layouts <b
-								class="arrow fa fa-angle-down"></b>
-						</a> <b class="arrow"></b>
-
-							<ul class="submenu">
-								<li class=""><a href="top-menu.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Top Menu
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="two-menu-2.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Two Menus 2
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="mobile-menu-1.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Default Mobile Menu
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="mobile-menu-2.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Mobile Menu 2
-								</a> <b class="arrow"></b></li>
-
-							</ul></li>
-
-						<li class=""><a href="typography.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Typography
+						<li class=""><a href="../menuboard/confirm"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu Confirm
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="buttons.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Buttons &amp; Icons
+						<li class=""><a href="../menuboard/new"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu Template
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="treeview.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Treeview
+						<li class=""><a href="../category/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu category
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="nestable-list.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Nestable Lists
+						<li class=""><a href="../menu/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu list
+						</a> <b class="arrow"></b></li>
+
+						<li class=""><a href="eventlist"> <i
+								class="menu-icon fa fa-caret-right"></i> Event Board
+						</a> <b class="arrow"></b></li>
+
+						<li class=""><a href="../board/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Board
 						</a> <b class="arrow"></b></li>
 
 					</ul></li>
 
-				<li class="active open"><a href="#" class="dropdown-toggle">
-						<i class="menu-icon fa fa-pencil-square-o"></i> <span
+				<li class=""><a href="#" class="dropdown-toggle"> <i
+						class="menu-icon fa fa-pencil-square-o"></i> <span
 						class="menu-text"> Stores </span> <b
 						class="arrow fa fa-angle-down"></b>
 				</a> <b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class="active"><a href="admin-form-detail.html"> <i
+						<li class=""><a href="admin-form-detail.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Store Infomation
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="store_list.html"> <i
+						<li class=""><a href="branchlist"> <i
 								class="menu-icon fa fa-caret-right"></i> Store List
-						</a> <b class="arrow"></b></li>
-
-						<li class=""><a href="form-wizard.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Wizard &amp; Validation
 						</a> <b class="arrow"></b></li>
 
 						<li class=""><a href="wysiwyg.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Wysiwyg &amp; Markdown
-						</a> <b class="arrow"></b></li>
-
-						<li class=""><a href="dropzone.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Dropzone File Upload
 						</a> <b class="arrow"></b></li>
 					</ul></li>
 
@@ -557,8 +530,8 @@
 					<!-- 실제적인 내용은 여기부터 -->
 					<div class="page-header">
 						<h1>
-							템플릿 정보 <small> <i
-								class="ace-icon fa fa-angle-double-right"></i> 템플릿 정보 입력
+							디지털 보드 관리 <small> <i
+								class="ace-icon fa fa-angle-double-right"></i> 메뉴 보드 상세 내용
 							</small>
 						</h1>
 					</div>
@@ -567,93 +540,160 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<!-- PAGE CONTENT BEGINS -->
-							<form class="form-horizontal" role="form" action="insert" method="post" enctype="multipart/form-data">
+							<form class="form-horizontal" role="form" action="update"
+								method="post" enctype="multipart/form-data">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right"
-										for="form-field-1-1"> 타입</label>
+									<label class="col-sm-2 control-label no-padding-right"
+										for="branchSelect"> 매장명 </label>
 									<div class="col-sm-5">
-									  <select id="type" name="templateType" class="col-xs-12 col-sm-11" style="height: 34px">
-									   <option value="메뉴" name="templateType">메뉴</option>
-									   <option value="이벤트" name="templateType">이벤트</option>
-									  </select>
-									</div>
-								</div>
-								
-								<div class="form-group">
-                  <label class="col-sm-3 control-label no-padding-right"
-                    for="form-field-1-1"> 템플릿</label>
-
-                  <div class="col-sm-9">
-                    <input type="text" name="templateName" id="form-field-1-1"
-                      placeholder="템플릿 명" class="col-xs-10 col-sm-6" />
-                  </div>
-                </div>
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right"
-										for="form-field-1-2"> 관리자 </label>
-                  <!-- 파일 출력 디자인 가져다 붙어야 함 -->
-									<div class="col-sm-9">
-										<input type="file" name="file" id="form-field-1-2" class="col-xs-10 col-sm-6" />
+										<input type="text" id="branchSelect" name="branchName"
+											class="col-xs-12" value="${confirmList[0].branchName}"
+											placeholder="매장명" />
 									</div>
 								</div>
 
 								<div class="space-4"></div>
 
-								<div class="row">
-									<div class="col-xs-12 col-sm-3"></div>
-									<div class="col-xs-12 col-sm-6">
-										<div class="widget-box">
-											<div class="widget-header">
-												<h4 class="widget-title">템플릿 특이 사항 메모</h4>
+								<div class="form-group">
+									<label class="col-sm-2 control-label no-padding-right"
+										for="menuWindow"> 메뉴 템플릿</label>
 
-												<div class="widget-toolbar">
-													<a href="#" data-action="collapse"> <i
-														class="ace-icon fa fa-chevron-up"></i>
-													</a> <a href="#" data-action="close"> <i
-														class="ace-icon fa fa-times"></i>
-													</a>
-												</div>
-											</div>
-
-											<div class="widget-body">
-												<div class="widget-main">
-													<div class="form-group">
-														<div class="col-xs-12">
-															<textarea name="templateComment" style="resize: none"
-																rows="6" cols="72"></textarea>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
+									<div class="col-sm-5">
+										<input type="text" id="menuWindow" name="etpno"
+											class="col-xs-12" value="${confirmList[0].menuTempType}"
+											placeholder="메뉴 템플릿" />
 									</div>
-									<div class="col-xs-12 col-sm-3"></div>
 								</div>
+
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label no-padding-right">
+										상세 메뉴정보</label>
+								</div>
+
+
+								<div class="accordion-style1 panel-group" id="accordian">
+									<c:forEach items="${confirmList}" var="item" varStatus="status">
+										<!-- 메뉴보드 상세등록은 아코디언 형식으로! UI 깔끔하게 많은 정보를 입력! -->
+										<div class="12u$">
+											<!-- 위에서 템플릿 선택한것에 따라 메뉴 수 만큼 panel panel-defult 출력 -->
+											<div class="accordion-style1 panel-group" id="accordian">
+												<div class="panel panel-defult">
+													<!-- forEach? -->
+
+													<div class="panel-heading">
+														<h4 class="panel-title">
+
+															<a class="accordion-toggle" data-toggle="collapse"
+																data-parent="#accordion" href="#collapse${status.index}">
+																<i class="ace-icon fa fa-angle-down bigger-110"
+																data-icon-hide="ace-icon fa fa-angle-down"
+																data-icon-show="ace-icon fa fa-angle-right"></i>
+																&nbsp;메뉴 ${status.index}
+															</a>
+														</h4>
+													</div>
+													<div
+														class="12$ ${status.index eq 0 ? 'panel-collapse collapse in':'panel-collapse collapse'}"
+														id="collapse${status.index}" role="tabpanel"
+														aria-labelledby="headingOne">
+														<div class="panel-body">
+															<div class="widget-main">
+																<div class="row">
+																	<div class="col-xs-12 col-sm-6">
+																		<div class="image fit">
+																			<img class="img-thumbnail" id="output1"
+																				alt="menuboard #1 image" items="" var="path" src="" />
+																		</div>
+																	</div>
+
+																	<div class="col-xs-12 col-sm-6">
+
+																		<div class="form-group">
+																			<label for="menuTitle"> 메뉴명</label>
+																			<div>
+																				<input type="text" name="" id="mname"
+																					value="${confirm.menuName}"
+																					placeholder="메뉴명을 입력하세요" />
+																			</div>
+																		</div>
+
+																		<div class="form-group">
+																			<label for="menuTitle"> 메뉴명</label>
+																			<div>
+																				<input type="text" name="" id="mname"
+																					value="${confirm.menuType}"
+																					placeholder="메뉴명을 입력하세요" />
+																			</div>
+																		</div>
+
+																		<div class="form-group">
+																			<label for="menuTitle"> 가격</label>
+																			<div>
+																				<input type="text" name="" id="mprice"
+																					value="${confirm.menuPrice}"
+																					placeholder="메뉴 가격을 입력하세요" />
+																			</div>
+																		</div>
+
+																		<div class="form-group">
+																			<label for="menuEtc"> 기타사항 입력</label>
+																			<div>
+																				<input type="text" id="mcontent" name="mcontent"
+																					value="${confirm.menuContent}"
+																					placeholder="예) 원산지, 칼로리, 외국어표기 등 요청사항 입력" />
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- row 끝-->
+
+																<button class="btn btn-sm btn-danger btn-round"
+																	type="button">
+																	<!-- 메뉴1 save -->
+																	<i class="ace-icon fa fa-floppy-o bigger-125"></i> 저장
+																</button>
+
+															</div>
+															<!-- widget-main 끝-->
+														</div>
+														<!-- panel-body 끝-->
+													</div>
+
+													<!-- panel-collapse collapse in끝-->
+												</div>
+												<!-- panel panel-defult 끝-->
+											</div>
+											<!-- accordion-style1 panel-group 끝-->
+										</div>
+									</c:forEach>
+
+
+								</div>
+								<!-- accordion-style1 panel-group 끝-->
+
 
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<button class="btn btn-info" id="active" type="submit">
-											<i class="ace-icon fa fa-hand-o-right bigger-110"></i> 적용
-										</button>
-										&nbsp; &nbsp;
+										<a href="#" type="button" class="btn btn-info" role="button">
+											<i class="ace-icon fa fa-table bigger-110"></i> 목록
+										</a> &nbsp; &nbsp;
 										<button class="btn" type="reset">
 											<i class="ace-icon fa fa-undo bigger-110"></i> 리셋
 										</button>
+
 										&nbsp; &nbsp;
-										<button class="btn btn-danger" type="button" onclick="doDelete(${item.templateNo})">
+										<button class="btn btn-danger" type="button"
+											onclick="doDelete()">
 											<i class="ace-icon fa fa-exclamation-circle bigger-110"></i>
 											삭제
 										</button>
 
-										&nbsp; &nbsp;
-										<button class="btn btn-success" type="button"
-											onclick="doList()">
-											<i class="ace-icon fa fa-folder-open-o bigger-110"></i> 목록
-										</button>
 									</div>
 								</div>
 							</form>
+
 						</div>
 						<!-- /.col -->
 					</div>
@@ -667,14 +707,14 @@
 		<div class="footer">
 			<div class="footer-inner">
 				<div class="footer-content">
-					<span class="bigger-120"> <span class="blue bolder">Ace</span>
-						Application &copy; 2013-2014
+					<span class="bigger-120"> <span class="blue bolder">Bigdata3</span>
+						Administrator &copy; 2017
 					</span> &nbsp; &nbsp; <span class="action-buttons"> <a href="#">
 							<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
 					</a> <a href="#"> <i
 							class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
 					</a> <a href="#"> <i
-							class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							class="ace-icon fa fa-github-square red bigger-150"></i>
 					</a>
 					</span>
 				</div>
@@ -686,97 +726,62 @@
 			class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 		</a>
 	</div>
-	<script>
-	function doList(){
-        location.href="../template/list";
-    }
-	
-    function doDelete(templateNo){
-        location.href="../template/delete?templateNo="+ templateNo;
-    }
-	</script>
 	<!-- /.main-container -->
 
 	<!-- basic scripts -->
-	<!-- 이 영역 if IE 처리 되어 있는데 왜? -->
+	<script>
+		// 이미지 파일 보여주기
+		var loadFile = function(event) {
+			var output = document.getElementById('output');
+			output.src = URL.createObjectURL(event.target.files[0]);
+		};
+
+		// 삭제, 목록 버튼  
+		function doDelete() {
+			location.href = 'delete.do?no=${branch.no}'
+		}
+
+		function doList() {
+			location.href = 'list.do'
+		}
+	</script>
+	<!--[if !IE]> -->
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+	<script type="text/javascript">
+		if ('ontouchstart' in document.documentElement)
+			document
+					.write("<script src='${pageContext.servletContext.contextPath}/assets/js/jquery.mobile.custom.min.js'>"
+							+ "<"+"/script>");
+	</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+
+	<!--[if lte IE 8]>
+      <script src="assets/js/excanvas.min.js"></script>
+    <![endif]-->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-2.1.4.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-ui.custom.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/autosize.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-ui.custom.min.js"></script>
-	<!-- 여기까지 -->
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/chosen.jquery.min.js"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.knob.min.js"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/autosize.min.js"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.inputlimiter.min.js"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.maskedinput.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.inputlimiter.min.js"></script>
+
 	<!-- ace scripts -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-elements.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace.min.js"></script>
+
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
-		$(function() {
-			$('#id-disable-check').on('click', function() {
-				var inp = $('#form-input-readonly').get(0);
-				if (inp.hasAttribute('disabled')) {
-					inp.setAttribute('readonly', 'true');
-					inp.removeAttribute('disabled');
-					inp.value = "This text field is readonly!";
-				} else {
-					inp.setAttribute('disabled', 'disabled');
-					inp.removeAttribute('readonly');
-					inp.value = "This text field is disabled!";
-				}
-			});
-
-			if (!ace.vars['touch']) {
-				$('.chosen-select').chosen({
-					allow_single_deselect : true
-				});
-				//resize the chosen on window resize
-
-				$(window).off('resize.chosen').on('resize.chosen', function() {
-					$('.chosen-select').each(function() {
-						var $this = $(this);
-						$this.next().css({
-							'width' : $this.parent().width()
-						});
-					})
-				}).trigger('resize.chosen');
-				//resize chosen on sidebar collapse/expand
-				$(document).on('settings.ace.chosen',
-						function(e, event_name, event_val) {
-							if (event_name != 'sidebar_collapsed')
-								return;
-							$('.chosen-select').each(function() {
-								var $this = $(this);
-								$this.next().css({
-									'width' : $this.parent().width()
-								});
-							})
-						});
-
-				$('#chosen-multiple-style .btn').on(
-						'click',
-						function(e) {
-							var target = $(this).find('input[type=radio]');
-							var which = parseInt(target.val());
-							if (which == 2)
-								$('#form-field-select-4').addClass(
-										'tag-input-style');
-							else
-								$('#form-field-select-4').removeClass(
-										'tag-input-style');
-						});
-			}
+		jQuery(function($) {
 
 			$('[data-rel=tooltip]').tooltip({
 				container : 'body'
@@ -792,31 +797,93 @@
 				limitText : 'max allowed : %n.'
 			});
 
-			//chosen plugin inside a modal will have a zero width because the select element is originally hidden
-			//and its width cannot be determined.
-			//so we set the width after modal is show
-			$('#modal-form').on(shown.bs.modal',
-				    function() {
-						if (!ace.vars['touch']) {
-							$(this).find('.chosen-container').each(
-									function() {
-										$(this).find('a:first-child').css(
-												'width', '210px');
-										$(this).find('.chosen-drop').css(
-												'width', '210px');
-										$(this).find('.chosen-search input')
-												.css('width', '200px');
-									});
+			//dynamically change allowed formats by changing allowExt && allowMime function
+			$('#id-file-format').removeAttr('checked').on(
+					'change',
+					function() {
+						var whitelist_ext, whitelist_mime;
+						var btn_choose
+						var no_icon
+						if (this.checked) {
+							btn_choose = "Drop images here or click to choose";
+							no_icon = "ace-icon fa fa-picture-o";
+
+							whitelist_ext = [ "jpeg", "jpg", "png", "gif",
+									"bmp" ];
+							whitelist_mime = [ "image/jpg", "image/jpeg",
+									"image/png", "image/gif", "image/bmp" ];
+						} else {
+							btn_choose = "Drop files here or click to choose";
+							no_icon = "ace-icon fa fa-cloud-upload";
+
+							whitelist_ext = null;//all extensions are acceptable
+							whitelist_mime = null;//all mimes are acceptable
 						}
-					})
-    
-			$(document).one('ajaxloadstart.page',function(e) {
-				autosize.destroy('textarea[class*=autosize]')
-				$('.limiterBox,.autosizejs').remove();
-				$('.daterangepicker.dropdown-menu,.colorpicker.dropdown-menu,.bootstrap-datetimepicker-widget.dropdown-menu').remove();
-			});
+						var file_input = $('#id-input-file-3');
+						file_input.ace_file_input('update_settings', {
+							'btn_choose' : btn_choose,
+							'no_icon' : no_icon,
+							'allowExt' : whitelist_ext,
+							'allowMime' : whitelist_mime
+						})
+						file_input.ace_file_input('reset_input');
+
+						file_input.off('file.error.ace').on('file.error.ace',
+								function(e, info) {
+									//console.log(info.file_count);//number of selected files
+									//console.log(info.invalid_count);//number of invalid files
+									//console.log(info.error_list);//a list of errors in the following format
+
+									//info.error_count['ext']
+									//info.error_count['mime']
+									//info.error_count['size']
+
+									//info.error_list['ext']  = [list of file names with invalid extension]
+									//info.error_list['mime'] = [list of file names with invalid mimetype]
+									//info.error_list['size'] = [list of file names with invalid size]
+
+									/**
+									if( !info.dropped ) {
+									  //perhapse reset file field if files have been selected, and there are invalid files among them
+									  //when files are dropped, only valid files will be added to our file array
+									  e.preventDefault();//it will rest input
+									}
+									 */
+
+									//if files have been selected (not dropped), you can choose to reset input
+									//because browser keeps all selected files anyway and this cannot be changed
+									//we can only reset file field to become empty again
+									//on any case you still should check files with your server side script
+									//because any arbitrary file can be uploaded by user and it's not safe to rely on browser-side measures
+								});
+
+						/**
+						file_input
+						.off('file.preview.ace')
+						.on('file.preview.ace', function(e, info) {
+						  console.log(info.file.width);
+						  console.log(info.file.height);
+						  e.preventDefault();//to prevent preview
+						});
+						 */
+
+					});
+
+			$(document)
+					.one(
+							'ajaxloadstart.page',
+							function(e) {
+								autosize.destroy('textarea[class*=autosize]')
+
+								$('.limiterBox,.autosizejs').remove();
+								$(
+										'.daterangepicker.dropdown-menu,.colorpicker.dropdown-menu,.bootstrap-datetimepicker-widget.dropdown-menu')
+										.remove();
+							});
+
 		});
 		
+		alert(${confirm})
 	</script>
 </body>
 </html>

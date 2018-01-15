@@ -1,6 +1,10 @@
+<!-- 아코디언 foreach 처리 하다 말았음... -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+  pageContext.setAttribute("ENTER", "\r\n");
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,31 +15,30 @@
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/font-awesome.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
 
 <!-- page specific plugin styles -->
+<link rel="stylesheet" href="https://jqueryui.com/demos/style.css">
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet"
-	href="https://jqueryui.com/resources/demos/style.css">
+	href="${pageContext.servletContext.contextPath}/assets/css/jquery-ui.custom.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/jquery-ui.custom.min.css" />
-<link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/chosen.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/chosen.min.css" />
 
 <!-- text fonts -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/ace.min.css"
+	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
 	class="ace-main-stylesheet" id="main-ace-style">
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/registration.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/registration.css" />
 
 <!-- Favicon and touch icons -->
 <link rel="icon"
-	href="${pageContext.servletContext.contextPath}/resources/ico/home_iot.png">
+	href="${pageContext.servletContext.contextPath}/ico/home_iot.png">
 <style>
 .modal-dialog {
 	position: relative width:600px;
@@ -54,25 +57,10 @@
 <body class="subpage">
 
 	<!-- Header -->
-	<header id="header">
-	<div class="logo">
-		<a href="index.html">BIGDATA3 <span>by Donny</span></a>
-	</div>
-	<a href="#menu">Menu</a> </header>
+	<jsp:include page="../header.jsp"></jsp:include>
 
 	<!-- Nav -->
-	<nav id="menu">
-	<ul class="links">
-		<li><a href="index.html">메인</a></li>
-		<li><a href="loginmain.html">로그인</a></li>
-		<li><a href="mypage.html">마이페이지</a></li>
-		<li><a href="store_management.html">매장관리</a></li>
-		<li><a href="elements.html">빅데이터</a></li>
-		<li><a href="noticeboard.html">게시판</a></li>
-		<li><a href="index_admin.html">Admin Only</a></li>
-	</ul>
-	</nav>
-
+	<jsp:include page="../navi.jsp"></jsp:include>
 	<!-- Modal -->
 	<div class="container">
 		<div id="my-modal" class="modal fade" tabindex="-1">
@@ -84,7 +72,7 @@
 
 					<div class="modal-body">
 						<img class="image fit" id="output-temp" alt="menu template image"
-							src="images/menuwindow01.png" />
+							src="${tempList.upload}" />
 					</div>
 
 					<div class="modal-footer">
@@ -148,7 +136,7 @@
 							<strong>김수빈</strong> 님 반갑습니다.
 						</p>
 						<a href="loginmain.html" class="button special">로그인 페이지 이동</a> <a
-							href="../auth/logout" class="button alt">로그 아웃</a>
+							href="#" class="button alt">로그 아웃</a>
 					</div>
 					<div class="box">
 						<ul class="actions vertical">
@@ -163,18 +151,17 @@
 				</div>
 				<div class="9u$ 12u$(medium)">
 					<div class="box">
-						<form method="post" action="#">
+						<form method="post" action="sendrequest">
 							<div class="row uniform">
-
 								<div class="3u 12u$(xsmall)">
 									<h4>매장명</h4>
 								</div>
 								<div class="5u$ 12u$(xsmall)">
 									<div class="select-wrapper">
-										<select name="templateType" id="category_storeName">
-											<option value="">- 매장선택 -</option>
-											<option value="1">VIPS강남1호점</option>
-											<option value="2">VIPS서초1호점</option>
+										<select id="branchSelect" name="branchName">
+											<c:forEach items="${branchList}" var="branch">
+												<option value="${branch.name}">${branch.name}</option>
+											</c:forEach>
 										</select>
 									</div>
 								</div>
@@ -183,28 +170,36 @@
 								</div>
 								<div class="5u 12u$(xsmall)">
 									<div class="select-wrapper">
-										<select name=templateType id="menuWindow">
-											<option value="none">- 윈도우보드 템플릿을 선택하세요 -</option>
-											<option value="type1">type1</option>
-											<option value="type2">type2</option>
+										<select id="menuTempType" name=menuTempType>
+											<option value="메뉴1" name="menuTempType">메뉴1</option>
+											<option value="메뉴2" name="menuTempType">메뉴2</option>
 										</select>
 									</div>
 								</div>
+								
 								<div class="3u$ 12u$(xsmall)">
-									<!-- 템플릿 선택후 예제 이미지보기 버튼 클릭시 모달창으로 이미지를 확인할 수 있다. 템플릿 선택에 따라 적합한 미리보기를 띄워야 함 -->
-									<div class="actions">
-										<a href="#my-modal" class="button" role="button"
-											data-toggle="modal">예제 미리보기</a>
-									</div>
-								</div>
-
+                  <!-- 템플릿 선택후 예제 이미지보기 버튼 클릭시 모달창으로 이미지를 확인할 수 있다. 템플릿 선택에 따라 적합한 미리보기를 띄워야 함 -->
+                  <div class="actions">
+                    <a href="#my-modal" class="button" role="button"
+                      data-toggle="modal">예제 미리보기</a>
+                  </div>
+                </div>
+								
 								<div class="3u 12u$(xsmall)">
-									<h4>메뉴판 제목</h4>
-								</div>
-								<div class="5u$ 12u$(xsmall)">
-									<input type="text" name="Wmenu_title" id="winmenuTitle"
-										value="" placeholder="메뉴창의 타이틀을 입력 예) MyMenu01" />
-								</div>
+                  <h4>메뉴 영역</h4>
+                </div>
+                <div class="5u 12u$(xsmall)">
+                  <div class="select-wrapper">
+                    <select id="menuArea" name=menuArea>
+                      <option value="메뉴1" name="menuArea">영역1</option>
+                      <option value="메뉴2" name="menuArea">영역2</option>
+                      <option value="메뉴3" name="menuArea">영역3</option>
+                      <option value="메뉴4" name="menuArea">영역4</option>
+                      <option value="메뉴5" name="menuArea">영역5</option>
+                      <option value="메뉴6" name="menuArea">영역6</option>
+                    </select>
+                  </div>
+                </div>
 
 								<div class="6u 12u$(xsmall)">
 									<h4>상세 메뉴정보 설정</h4>
@@ -236,67 +231,54 @@
 														<div class="row">
 															<div class="col-xs-12 col-sm-6">
 																<div class="form-group">
-																	<div class="col-xs-12">
-																		<input type="file" name="photo" id="id-input-file-2">
-																	</div>
+																	<div class="image fit col-xs-12">
+                                    <img class='photo1' id="output" alt="store image"
+                                      src='../download/${menu.uploadList}'>
+                                  </div>
 																</div>
-
-																<div class="form-group">
-																	<div class="col-xs-12">
-																		<input multiple="" type="file" name="photo"
-																			id="id-input-file-3">
-																	</div>
-																</div>
-
-																<label> <input type="checkbox"
-																	name="file-format" id="id-file-format" class="ace" />
-																	<span class="lbl"> 이미지 파일만 허용</span>
-																</label>
 															</div>
 
 															<div class="col-xs-12 col-sm-6">
-
-																<div class="form-group">
-																	<label for="menuDivision"> 메뉴분류</label>
-																	<div>
-																		<select class="chosen-select" id="menuDivision"
-																			name="menu_division" data-placeholder="메뉴분류">
-																			<option value=""> - 메뉴분류 선택 - </option>
-																			<%-- <c:forEach items="" var="">
-																				<option value="non"></option>
-																			</c:forEach> --%>
-																		</select>
-																	</div>
-																</div>
-
 																<div class="form-group">
 																	<label for="menuTitle"> 메뉴명</label>
 																	<div>
-																		<input type="text" name="menu_title" id="menuTitle"
-																			value="" placeholder="메뉴명을 입력하세요" />
+																		<select id="menuName1" name="menuName"
+																			data-placeholder="메뉴">
+																			<option value="none">- 메뉴 선택 -</option>
+																			<c:forEach items="${menuList}" var="list">
+																				<option value="${list.menuName}">${list.menuName}</option>
+																			</c:forEach>
+																		</select>
 																	</div>
 																</div>
 
 																<div class="form-group">
 																	<label for="menuTitle"> 가격</label>
 																	<div>
-																		<input type="text" name="menu_price" id="menuPrice"
+																		<input type="text" name="menuPrice" id="menuPrice"
 																			value="" placeholder="메뉴 가격을 입력하세요" />
 																	</div>
 																</div>
 
 																<div class="form-group">
-																	<label for="menuEtc"> 기타사항 입력</label>
+																	<label for="menuDivision"> 메뉴분류</label>
 																	<div>
-																		<input type="text" id="menuEtc" name="menuEtc"
+																		<input type="text" name="menuType" id="menuType"
+																			value="" placeholder="메뉴 분류" />
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label for="menuContent"> 기타사항 입력</label>
+																	<div>
+																		<input type="text" id="menuContent" name="menuContent"
 																			placeholder="예) 원산지, 칼로리, 외국어표기 등 요청사항 입력" />
 																	</div>
 																</div>
 															</div>
 														</div>
 														<!-- row 끝-->
-
-														<button class="btn btn-sm btn-danger btn-round"
+														<button class="btn btn-sm btn-danger btn-round" onclick="insert-btn"
 															type="button">
 															<!-- 메뉴1 save -->
 															<i class="ace-icon fa fa-floppy-o bigger-125"></i> 저장
@@ -310,113 +292,9 @@
 											<!-- panel-collapse collapse in끝-->
 										</div>
 										<!-- panel panel-defult 끝-->
-
-										<div class="panel panel-defult">
-											<!-- forEach -->
-											<div class="panel-heading">
-												<h4 class="panel-title">
-
-													<a class="accordion-toggle collapsed"
-														data-toggle="collapse" data-parent="#accordion"
-														href="#collapseTwo"> <i
-														class="ace-icon fa fa-angle-down bigger-110"
-														data-icon-hide="ace-icon fa fa-angle-down"
-														data-icon-show="ace-icon fa fa-angle-right"></i> &nbsp;메뉴
-														#2
-													</a>
-												</h4>
 											</div>
-
-											<div class="panel-collapse collapse" id="collapseTwo">
-												<div class="panel-body">
-													<div class="widget-main">
-														<div class="row">
-															<div class="col-xs-12 col-sm-6">
-																<div class="form-group">
-																	<div class="col-xs-12">
-																		<input type="file" name="photo" id="id-input-file-2">
-																	</div>
-																</div>
-
-																<div class="form-group">
-																	<div class="col-xs-12">
-																		<input multiple="" type="file" name="photo"
-																			id="id-input-file-4">
-																	</div>
-																</div>
-
-																<label> <input type="checkbox"
-																	name="file-format" id="id-file-format" class="ace" />
-																	<span class="lbl"> 이미지 파일만 허용</span>
-																</label>
-															</div>
-
-
-															<div class="col-xs-12 col-sm-6">
-																<div class="form-group">
-																	<label for="menuTitle"> 메뉴명</label>
-																	<div>
-																		<input type="text" name="menu_title" id="menuTitle"
-																			value="" placeholder="메뉴명을 입력하세요" />
-																	</div>
-																</div>
-
-																<div class="form-group">
-																	<label for="menuTitle"> 가격</label>
-																	<div>
-																		<input type="text" name="menu_price" id="menuPrice"
-																			value="" placeholder="메뉴 가격을 입력하세요" />
-																	</div>
-																</div>
-
-																<div class="form-group">
-																	<label for="menuDivision"> 메뉴분류</label>
-																	<div>
-																		<!-- 2번째 아코디언 이후 chosen-select가 화면 표시 안될때 있음...(꽉 안참) -->
-																		<select class="chosen-select" id="menuDivision"
-																			name="menu_division" data-placeholder="메뉴분류">
-																			<option value=""> - 메뉴분류 선택 - </option>
-																			<option value="">Beef</option>
-																			<option value="">Pork</option>
-																			<option value="">Chicken</option>
-																			<option value="">Fish</option>
-																			<option value="">Vegetarian</option>
-																			<option value="">Sandwich</option>
-																			<option value="">Salad</option>
-																			<option value="">Soup</option>
-																			<option value="">Noodle</option>
-																			<option value="">Rice</option>
-																			<option value="">Dessert</option>
-																			<option value="">Drink</option>
-																		</select>
-																	</div>
-																</div>
-
-																<div class="form-group">
-																	<label for="menuEtc"> 기타사항 입력</label>
-																	<div>
-																		<input type="text" id="menuEtc" name="menuEtc"
-																			placeholder="예) 원산지, 칼로리, 외국어표기 등 요청사항 입력" />
-																	</div>
-																</div>
-															</div>
-														</div>
-														<!-- row 끝-->
-
-														<button class="btn btn-sm btn-danger btn-round"
-															type="button">
-															<!-- 메뉴2 save -->
-															<i class="ace-icon fa fa-floppy-o bigger-125"></i> 저장
-														</button>
-
-													</div>
-													<!-- widget-main 끝-->
-												</div>
-												<!-- panel-body 끝-->
-											</div>
-											<!-- panel-collapse collapse끝-->
+											<!-- panel-collapse collapse in끝-->
 										</div>
-										<!-- panel panel-defult 끝-->
 									</div>
 									<!-- accordion-style1 panel-group 끝-->
 								</div>
@@ -440,22 +318,7 @@
 	</div>
 
 	<!-- Footer -->
-	<footer id="footer">
-	<div class="copyright">
-		<ul class="icons">
-			<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-			<li><a href="#" class="icon fa-instagram"><span
-					class="label">Instagram</span></a></li>
-			<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-		</ul>
-		<p>
-			&copy; Untitled. All rights reserved. Design: <a
-				href="https://templated.co">TEMPLATED</a>. Images: <a
-				href="https://unsplash.com">Unsplash</a>.
-		</p>
-	</div>
-	</footer>
+	<jsp:include page="../footer2.jsp"></jsp:include>
 
 	<!-- Scripts -->
 	<script type="text/javascript"
@@ -465,36 +328,69 @@
 	<script type="text/javascript">
 		if ('ontouchstart' in document.documentElement)
 			document
-					.write("<script src='assets/js/jquery.mobile.custom.min.js'>"
+					.write("<script src='${pageContext.servletContext.contextPath}/assets/js/jquery.mobile.custom.min.js'>"
 							+ "<"+"/script>");
 	</script>
 
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-ui.custom.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-ui.custom.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/chosen.jquery.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/chosen.jquery.min.js"></script>
 
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/autosize.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/autosize.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.inputlimiter.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.inputlimiter.min.js"></script>
 
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-elements.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.scrolly.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.scrolly.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery.scrollex.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery.scrollex.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/skel.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/skel.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/util.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/util.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/main.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/main.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/bootstrap.min.js"></script>
+
+	<script>
+		// 이미지 파일 보여주기
+		var loadFile = function(event) {
+			var output = document.getElementById('output');
+			output.src = URL.createObjectURL(event.target.files[0]);
+		};
+	</script>
+	<script>
+		var menuList = {};
+		<c:forEach items="${menuList}" var="menu">
+		menuList['${menu.menuName}'] = {
+			/* menuNo:'${menu.menuNo}', */
+			menuType : '${menu.menuType}',
+			menuName : '${menu.menuName}',
+			menuPrice : '${menu.menuPrice}',
+			menuContent : '${menu.menuContent}',
+		};
+		</c:forEach>
+
+		var mtype = document.getElementById("menuType");
+		var mprice = document.getElementById("menuPrice");
+		var mcontent = document.getElementById("menuContent");
+
+		$('body').on('change', '#menuName1', function() {
+			var menuName = $(this).prop('value');
+			mtype.value = (menuList[menuName].menuType);
+			mprice.value = (menuList[menuName].menuPrice);
+			mcontent.value = (menuList[menuName].menuContent);
+		})
+    
+		
+	</script>
 	<script type="text/javascript">
 		jQuery(function($) {
 			$('.modal.aside').ace_aside();
@@ -567,14 +463,7 @@
 				droppable : false,
 				onchange : null,
 				thumbnail : false
-			//| true | large
-			//whitelist:'gif|png|jpg|jpeg'
-			//blacklist:'exe|php'
-			//onchange:''
-			//
 			});
-			//pre-show a file name, for example a previously selected file
-			//$('#id-input-file-1').ace_file_input('show_file_list', ['myfile.txt'])
 
 			// 메뉴 등록 이미지 개수 만큼 id를 받아주어야 화면이 안깨짐(id 3~8까지 총 6개)
 			$(
@@ -586,31 +475,9 @@
 						no_icon : 'ace-icon fa fa-cloud-upload',
 						droppable : true,
 						thumbnail : 'fit'//small | large
-						//,icon_remove:null//set null, to hide remove/reset button
-						/**,before_change:function(files, dropped) {
-						  //Check an example below
-						  //or examples/file-upload.html
-						  return true;
-						}*/
-						/**,before_remove : function() {
-						  return true;
-						}*/
-						,
-						preview_error : function(filename, error_code) {
-							//name of the file that failed
-							//error_code values
-							//1 = 'FILE_LOAD_FAILED',
-							//2 = 'IMAGE_LOAD_FAILED',
-							//3 = 'THUMBNAIL_FAILED'
-							//alert(error_code);
-						}
-
 					}).on('change', function() {
-						//console.log($(this).data('ace_input_files'));
-						//console.log($(this).data('ace_input_method'));
 					});
 
-			//dynamically change allowed formats by changing allowExt && allowMime function
 			$('#id-file-format').removeAttr('checked').on(
 					'change',
 					function() {
@@ -640,46 +507,6 @@
 							'allowMime' : whitelist_mime
 						})
 						file_input.ace_file_input('reset_input');
-
-						file_input.off('file.error.ace').on('file.error.ace',
-								function(e, info) {
-									//console.log(info.file_count);//number of selected files
-									//console.log(info.invalid_count);//number of invalid files
-									//console.log(info.error_list);//a list of errors in the following format
-
-									//info.error_count['ext']
-									//info.error_count['mime']
-									//info.error_count['size']
-
-									//info.error_list['ext']  = [list of file names with invalid extension]
-									//info.error_list['mime'] = [list of file names with invalid mimetype]
-									//info.error_list['size'] = [list of file names with invalid size]
-
-									/**
-									if( !info.dropped ) {
-									  //perhapse reset file field if files have been selected, and there are invalid files among them
-									  //when files are dropped, only valid files will be added to our file array
-									  e.preventDefault();//it will rest input
-									}
-									 */
-
-									//if files have been selected (not dropped), you can choose to reset input
-									//because browser keeps all selected files anyway and this cannot be changed
-									//we can only reset file field to become empty again
-									//on any case you still should check files with your server side script
-									//because any arbitrary file can be uploaded by user and it's not safe to rely on browser-side measures
-								});
-
-						/**
-						file_input
-						.off('file.preview.ace')
-						.on('file.preview.ace', function(e, info) {
-						  console.log(info.file.width);
-						  console.log(info.file.height);
-						  e.preventDefault();//to prevent preview
-						});
-						 */
-
 					});
 
 			$(document)

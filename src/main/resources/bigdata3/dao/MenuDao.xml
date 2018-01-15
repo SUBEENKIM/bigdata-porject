@@ -9,29 +9,38 @@
     <result column="mname" property="menuName"/>
     <result column="mprice" property="menuPrice"/>
     <result column="mcontent" property="menuContent"/>
-    <result column="mkcal" property="menuKcal"/>
     <result column="mdate" property="createDate"/>
     <result column="delchk" property="deleteCheck"/>
-    <result column="manager" property="manager"/>
+    <result column="manager" property="manager"/> 
+    <association property="menuImage" javaType="upload">
+        <result column="filename" property="fileName"/>
+    </association>
   </resultMap>
   
   <select id="list" resultMap="menuMap" parameterType="map">
-    select mno, mtype, mname, mprice, mcontent, mkcal, mdate, delchk, manager
-    from menu
-    order by mno
-    limit #{start}, #{end}
+    select m.mno, m.mname, m.mprice, m.mcontent, m.mdate, m.delchk, m.manager, mc.mtype, mi.filename
+    from menu m left join menu_category mc
+    on m.mcno = mc.mcno
+    left join menu_image mi
+    on m.mno = mi.mno
+    order by m.mno 
+    limit #{startIndex}, #{pageSize}
   </select>
   
-  <select id="noPaging" resultMap="menuMap" parameterType="menu">
-    select mno, mtype, mname, mprice, mcontent, mkcal, mdate, delchk, manager
-    from menu
-    order by mno
+  <select id="noneSize" resultMap="menuMap">
+    select m.mno, m.mname, m.mprice, m.mcontent, m.mdate, m.delchk, m.manager, mc.mtype, mi.newfilename
+    from menu m left join menu_category mc
+    on m.mcno = mc.mcno
+    left join menu_image mi
+    on m.mno = mi.mno
+    order by m.mno 
   </select>
   
-  <select id="selectOne" resultMap="menuMap" parameterType="int">
-    select mno, mtype, mname, mprice, mcontent, mkcal, mdate, delchk, manager
-    from menu
-    where mno = #{menuNo}
+  <select id="selectByType" resultMap="menuMap" parameterType="map">
+    select m.mno, m.mname, m.mprice, m.mcontent, m.mdate, m.manager, m.delchk, mc.mtype
+    from menu m left join menu_category mc
+    on m.mcno = mc.mcno
+    where mc.mtype = #{menuType}
   </select>
   
   <select id="count" resultType="int">
@@ -39,9 +48,8 @@
   </select>
   
   <insert id="insert" parameterType="menu" useGeneratedKeys="true" keyColumn="mno" keyProperty="menuNo">
-    insert into menu(mno, mtype, mname, mprice, mcontent, mkcal, mdate, delchk, manager)
-    values(#{menuNo}, #{menuType}, #{menuName}, #{menuPrice}, #{menuContent}, #{menuKcal}
-    , now(), default, #{manager})
+    insert into menu(mcno, mname, mprice, mcontent, mdate, delchk, manager)
+    values(#{menuType}, #{menuName}, #{menuPrice}, #{menuContent}, now(), default, #{manager})
   </insert>
   
   <update id="update" parameterType="menu">
@@ -49,7 +57,7 @@
     set
     mname = #{menuName},
     mprice = #{menuPrice},
-    mkcal = #{menuKcal},
+    mcontent = #{menuContent},
     mdate = #{createDate}
     where mno = #{menuNo}
   </update>

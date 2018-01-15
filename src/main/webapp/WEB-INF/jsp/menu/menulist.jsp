@@ -11,27 +11,26 @@
 
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/bootstrap.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/bootstrap.min.css" />
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/font-awesome.min.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
 
 <!-- page specific plugin styles -->
 
 <!-- text fonts -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/fonts.googleapis.com.css" />
+	href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 
 <!-- ace styles -->
 <link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/assets/css/ace.min.css"
+	href="${pageContext.servletContext.contextPath}/assets/css/ace.min.css"
 	class="ace-main-stylesheet" id="main-ace-style" />
 
 <!-- Favicon and touch icons -->
-<link rel="icon"
-	href="${pageContext.servletContext.contextPath}/resources/ico/home_iot.png">
+<link rel="icon" href="ico/home_iot.png">
 <!-- ace settings handler -->
 <script
-	src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-extra.min.js"></script>
+	src="${pageContext.servletContext.contextPath}/assets/js/ace-extra.min.js"></script>
 </head>
 
 <body class="no-skin">
@@ -46,7 +45,7 @@
 
 			<div class="navbar-header pull-left">
 				<a href="index_admin.html" class="navbar-brand"> <small>
-						<i class="fa fa-leaf"></i> Donny Admin
+						<i class="fa fa-leaf"></i> Bigdata3 Admin
 				</small>
 				</a>
 			</div>
@@ -187,10 +186,10 @@
 							<li class="dropdown-content">
 								<ul class="dropdown-menu dropdown-navbar">
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar.png" class="msg-photo"
-											alt="Alex's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">민국:</span> 어제도
-													하얗게 불살났어 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar.png"
+											class="msg-photo" alt="Alex's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">민국:</span> 어제도 하얗게 불살났어 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>a moment
 														ago</span>
@@ -199,10 +198,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar3.png" class="msg-photo"
-											alt="Susan's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">연주:</span> 챗봇
-													기능에 추가 업데이트가 필요할 것 같아요 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar3.png"
+											class="msg-photo" alt="Susan's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">연주:</span> 챗봇 기능에 추가 업데이트가 필요할 것 같아요 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>20 minutes
 														ago</span>
@@ -211,10 +210,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar4.png" class="msg-photo"
-											alt="Bob's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">수빈:</span> 관리자
-													페이지에 새로운 기능을 추가했어요 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar4.png"
+											class="msg-photo" alt="Bob's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">수빈:</span> 관리자 페이지에 새로운 기능을 추가했어요 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>3:15 pm</span>
 											</span>
@@ -222,10 +221,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar2.png" class="msg-photo"
-											alt="Kate's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">종학:</span> 빅데이터
-													분석에 따른 시각화 세부사항 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar2.png"
+											class="msg-photo" alt="Kate's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">종학:</span> 빅데이터 분석에 따른 시각화 세부사항 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>1:33 pm</span>
 											</span>
@@ -233,10 +232,10 @@
 									</a></li>
 
 									<li><a href="#" class="clearfix"> <img
-											src="images/avatars/avatar5.png" class="msg-photo"
-											alt="Fred's Avatar" /> <span class="msg-body"> <span
-												class="msg-title"> <span class="blue">동석:</span> 어제도
-													할게 많았지만 오늘은 더 많다 ...
+											src="${pageContext.servletContext.contextPath}/images/avatars/avatar5.png"
+											class="msg-photo" alt="Fred's Avatar" /> <span
+											class="msg-body"> <span class="msg-title"> <span
+													class="blue">동석:</span> 어제도 할게 많았지만 오늘은 더 많다 ...
 											</span> <span class="msg-time"> <i
 													class="ace-icon fa fa-clock-o"></i> <span>10:09 am</span>
 											</span>
@@ -270,8 +269,8 @@
 
 							<li class="divider"></li>
 
-							<li><a href="http://locahost:8080/auth/logout"> <i
-									class="ace-icon fa fa-power-off"></i> Logout
+							<li><a href="#"> <i class="ace-icon fa fa-power-off"></i>
+									Logout
 							</a></li>
 						</ul></li>
 				</ul>
@@ -282,20 +281,20 @@
 
 	<div class="main-container ace-save-state" id="main-container">
 		<script type="text/javascript">
-            try {
-                ace.settings.loadState('main-container')
-            } catch (e) {
-            }
-        </script>
+			try {
+				ace.settings.loadState('main-container')
+			} catch (e) {
+			}
+		</script>
 
 		<div id="sidebar"
 			class="sidebar                  responsive                    ace-save-state">
 			<script type="text/javascript">
-                try {
-                    ace.settings.loadState('sidebar')
-                } catch (e) {
-                }
-            </script>
+				try {
+					ace.settings.loadState('sidebar')
+				} catch (e) {
+				}
+			</script>
 
 			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
@@ -326,84 +325,60 @@
 			<!-- /.sidebar-shortcuts -->
 
 			<ul class="nav nav-list">
-				<li class="active"><a href="index_admin.html"> <i
+				<li class=""><a href="main"> <i
 						class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
 							Dashboard </span>
 				</a> <b class="arrow"></b></li>
 
 				<li class=""><a href="#" class="dropdown-toggle"> <i
 						class="menu-icon fa fa-bar-chart-o"></i> <span class="menu-text">
-							UI &amp; Elements </span> <b class="arrow fa fa-angle-down"></b>
+							Board Mgt </span> <b class="arrow fa fa-angle-down"></b>
 				</a> <b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class=""><a href="#" class="dropdown-toggle"> <i
-								class="menu-icon fa fa-caret-right"></i> Layouts <b
-								class="arrow fa fa-angle-down"></b>
-						</a> <b class="arrow"></b>
-
-							<ul class="submenu">
-								<li class=""><a href="top-menu.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Top Menu
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="two-menu-2.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Two Menus 2
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="mobile-menu-1.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Default Mobile Menu
-								</a> <b class="arrow"></b></li>
-
-								<li class=""><a href="mobile-menu-2.html"> <i
-										class="menu-icon fa fa-caret-right"></i> Mobile Menu 2
-								</a> <b class="arrow"></b></li>
-
-							</ul></li>
-
-						<li class=""><a href="typography.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Typography
+						<li class=""><a href="../menuboard/confirm"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu Confirm
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="buttons.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Buttons &amp; Icons
+						<li class=""><a href="../menuboard/new"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu Template
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="treeview.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Treeview
+						<li class=""><a href="../category/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu category
 						</a> <b class="arrow"></b></li>
 
-						<li class=""><a href="nestable-list.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Nestable Lists
+						<li class=""><a href="../menu/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Menu list
+						</a> <b class="arrow"></b></li>
+
+						<li class=""><a href="eventlist"> <i
+								class="menu-icon fa fa-caret-right"></i> Event Board
+						</a> <b class="arrow"></b></li>
+
+						<li class=""><a href="../board/list"> <i
+								class="menu-icon fa fa-caret-right"></i> Board
 						</a> <b class="arrow"></b></li>
 
 					</ul></li>
 
-				<li class="active open"><a href="#" class="dropdown-toggle">
-						<i class="menu-icon fa fa-pencil-square-o"></i> <span
+				<li class=""><a href="#" class="dropdown-toggle"> <i
+						class="menu-icon fa fa-pencil-square-o"></i> <span
 						class="menu-text"> Stores </span> <b
 						class="arrow fa fa-angle-down"></b>
 				</a> <b class="arrow"></b>
 
-					<ul class="submenu">
+					<!-- <ul class="submenu">
 						<li class=""><a href="admin-form-detail.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Store Infomation
 						</a> <b class="arrow"></b></li>
 
-						<li class="active"><a href="store_list.html"> <i
+						<li class=""><a href="branchlist"> <i
 								class="menu-icon fa fa-caret-right"></i> Store List
-						</a> <b class="arrow"></b></li>
-
-						<li class=""><a href="form-wizard.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Wizard &amp; Validation
 						</a> <b class="arrow"></b></li>
 
 						<li class=""><a href="wysiwyg.html"> <i
 								class="menu-icon fa fa-caret-right"></i> Wysiwyg &amp; Markdown
-						</a> <b class="arrow"></b></li>
-
-						<li class=""><a href="dropzone.html"> <i
-								class="menu-icon fa fa-caret-right"></i> Dropzone File Upload
 						</a> <b class="arrow"></b></li>
 					</ul></li>
 
@@ -425,7 +400,7 @@
 						class="menu-icon fa fa-file-o"></i> <span class="menu-text">
 							Other Pages <span class="badge badge-primary">5</span>
 					</span> <b class="arrow fa fa-angle-down"></b>
-				</a> <b class="arrow"></b>
+				</a> <b class="arrow"></b> -->
 
 					<ul class="submenu">
 						<li class=""><a href="faq.html"> <i
@@ -546,7 +521,7 @@
 								상세정보</div></span> <span class="col-xs-3">
 							<button class="btn btn-white btn-primary btn-bold">
 								<i class="ace-icon fa fa-cloud-upload hidden-480"></i><a
-									href='../menu/regimenu'>메뉴 추가</a>
+									href='../menu/new'>메뉴 추가</a>
 							</button>
 						</span>
 					</div>
@@ -594,18 +569,21 @@
 															</td>
 															<td class="hidden-480">${item.menuNo}</td>
 															<td class="hidden-480">${item.menuType}</td>
-															<td>${item.manager}</td>
+															<td>관리자</td>
+															<%-- <td>${item.manager}</td> --%>
 															<td>${item.createDate}</td>
 															<td>
 																<div class="hidden-sm hidden-xs btn-group">
-																	<button class="btn btn-xs btn-success" id="search-btn">
+																	<button class="btn btn-xs btn-success">
 																		<i class="ace-icon fa fa-search-plus bigger-120"></i>
 																	</button>
-																	<button class="btn btn-xs btn-info" onclick="edit()">
+
+																	<button class="btn btn-xs btn-info">
 																		<i class="ace-icon fa fa-pencil bigger-120"></i>
 																	</button>
-																	<button class="btn btn-xs btn-danger" id="delete-btn"
-																		name="btnDelete" onclick="rowDelete(this)">
+
+																	<button class="btn btn-xs btn-danger" id="btnDelete"
+																		name="btnDelete">
 																		<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																	</button>
 																</div> <!-- 테블릿 or 핸드폰 화면전용 -->
@@ -635,7 +613,8 @@
 
 																			<li><a href="#" class="tooltip-error"
 																				data-rel="tooltip" title="Delete" id="btnDelete"
-																				name="btnDelete"> <span class="red"> <i
+																				name="btnDelete" onclick="delete(${item.menuNo})">
+																					<span class="red"> <i
 																						class="ace-icon fa fa-trash-o bigger-120"></i>
 																				</span>
 																			</a></li>
@@ -654,12 +633,13 @@
 																			<div class="text-center">
 																				<img height="150"
 																					class="thumbnail inline no-margin-bottom"
-																					alt="menu image" src="../download/${path}" /> <br />
+																					alt="menu image"
+																					src="../download/${item.menuImage.fileName}" /> <br />
 																				<div class="label label-info label-xlg">
 																					<div class="inline position-relative">
-																						<a class="user-title-label" href="#"> <i
-																							class="ace-icon fa fa-cutlery light-green"></i> <span
-																							class="white">Menu Name</span>
+																						<a class="user-title-label">
+																							<i class="ace-icon fa fa-cutlery light-green"></i>
+																							<span class="white">Menu Name</span>
 																						</a>
 																					</div>
 																				</div>
@@ -697,16 +677,6 @@
 																						<i
 																							class="fa fa-map-marker light-orange bigger-110"></i>
 																						<span>${item.menuPrice}</span>
-																					</div>
-																				</div>
-
-																				<div class="profile-info-row">
-																					<div class="profile-info-name">열량</div>
-
-																					<div class="profile-info-value">
-																						<i
-																							class="fa fa-map-marker light-orange bigger-110"></i>
-																						<span>${item.menuKcal}</span>
 																					</div>
 																				</div>
 
@@ -770,29 +740,32 @@
 											<!-- forEach 반복 끝? -->
 										</tbody>
 										<!-- table body 끝 -->
-										<tfoot>
-											<tr>
-												<td colspan="5"><c:if test="${paging.curGroup > 1}">
-														<a href="javascript:page('1')">[처음]</a>
-													</c:if> <c:if test="${paging.curGroup > 1}">
-														<a href="javascript:page('${paging.prevPage}')">[이전]</a>
-													</c:if> <c:forEach var="num" begin="${paging.groupStart}"
-														end="${paging.groupEnd}">
-														<c:choose>
-															<c:when test="${num == paging.curPage}">
-																<span style="color: red">${num}</span>&nbsp;
+									</table>
+									<div class="pagination">
+										<c:if test="${paging.curGroup > 1}">
+											<a href="javascript:page('1')">[처음]</a>
+										</c:if>
+										<c:if test="${paging.curGroup > 1}">
+											<a href="javascript:page('${paging.prevPage}')">[이전]</a>
+										</c:if>
+										<c:forEach var="num" begin="${paging.groupStart}"
+											end="${paging.groupEnd}">
+											<c:choose>
+												<c:when test="${num == paging.curPage}">
+													<span style="color: red">${num}</span>&nbsp;
                                     </c:when>
-															<c:otherwise>
-																<a href="javascript:page('${num}')">${num}</a>&nbsp;
+												<c:otherwise>
+													<a href="javascript:page('${num}')">${num}</a>&nbsp;
                                     </c:otherwise>
-														</c:choose>
-													</c:forEach> <c:if test="${paging.curGroup < paging.totGroup}">
-														<a href="javascript:page('${paging.nextPage}')">[다음]</a>
-													</c:if> <c:if test="${paging.curPage < paging.totPage}">
-														<a href="javascript:page('${paging.totPage}')">[끝]</a>
-													</c:if></td>
-											</tr>
-										</tfoot>
+											</c:choose>
+										</c:forEach>
+										<c:if test="${paging.curGroup < paging.totGroup}">
+											<a href="javascript:page('${paging.nextPage}')">[다음]</a>
+										</c:if>
+										<c:if test="${paging.curPage < paging.totPage}">
+											<a href="javascript:page('${paging.totPage}')">[끝]</a>
+										</c:if>
+									</div>
 									</table>
 									<!-- table 끝 -->
 								</div>
@@ -840,7 +813,7 @@
 
 	<!--[if !IE]> -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/jquery-2.1.4.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/jquery-2.1.4.min.js"></script>
 
 	<!-- <![endif]-->
 
@@ -848,129 +821,118 @@
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 	<script type="text/javascript">
-        if ('ontouchstart' in document.documentElement)
-            document
-                    .write("<script src='${pageContext.servletContext.contextPath}/resources/assets/js/jquery.mobile.custom.min.js'>"
-                            + "<" + "/script>");
-    </script>
+		if ('ontouchstart' in document.documentElement)
+			document
+					.write("<script src='${pageContext.servletContext.contextPath}/assets/js/jquery.mobile.custom.min.js'>"
+							+ "<" + "/script>");
+	</script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/bootstrap.min.js"></script>
 
 	<!-- page specific plugin scripts -->
 
 	<!-- ace scripts -->
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace-elements.min.js"></script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace-elements.min.js"></script>
 	<script
-		src="${pageContext.servletContext.contextPath}/resources/assets/js/ace.min.js"></script>
-	<script>
-	function page(pageNo) {
-        location.href = "../menu/manage?curPage=" + pageNo;
-    }
-    function edit(){
-        location.href="../board/detail?boardManageNo=${item.boardManageNo}";
-    }
-    $(function(){
-    	$('#search-btn').click(function(){
-            location.href="list";
-        })
-        
-        
-        $('#delete-btn').click(function(){
-            location.href="../board/";
-        })	
-    })
-    
-    </script>
+		src="${pageContext.servletContext.contextPath}/assets/js/ace.min.js"></script>
+
 	<!-- inline scripts related to this page -->
 	<script type="text/javascript">
-        jQuery(function($) {
-            //select/deselect all rows according to table header checkbox
-            var active_class = 'active';
-            $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on(
-                    'click',
-                    function() {
-                        var th_checked = this.checked;//checkbox inside "TH" table header
-                        $(this).closest('table').find('tbody > tr').each(
-                                function() {
-                                    var row = this;
-                                    if (th_checked)
-                                        $(row).addClass(active_class).find(
-                                                'input[type=checkbox]').eq(0)
-                                                .prop('checked', true);
-                                    else
-                                        $(row).removeClass(active_class).find(
-                                                'input[type=checkbox]').eq(0)
-                                                .prop('checked', false);
-                                });
-                    });
-            //select/deselect a row when the checkbox is checked/unchecked
-            $('#simple-table').on('click', 'td input[type=checkbox]',
-                    function() {
-                        var $row = $(this).closest('tr');
-                        if ($row.is('.detail-row '))
-                            return;
-                        if (this.checked)
-                            $row.addClass(active_class);
-                        else
-                            $row.removeClass(active_class);
-                    });
-            /********************************/
-            //add tooltip for small view action buttons in dropdown menu
-            $('[data-rel="tooltip"]').tooltip({
-                placement : tooltip_placement
-            });
-            //tooltip placement on right or left
-            function tooltip_placement(context, source) {
-                var $source = $(source);
-                var $parent = $source.closest('table')
-                var off1 = $parent.offset();
-                var w1 = $parent.width();
-                var off2 = $source.offset();
-                //var w2 = $source.width();
-                if (parseInt(off2.left) < parseInt(off1.left)
-                        + parseInt(w1 / 2))
-                    return 'right';
-                return 'left';
-            }
-            /***************/
-            $('.show-details-btn').on(
-                    'click',
-                    function(e) {
-                        e.preventDefault();
-                        $(this).closest('tr').next().toggleClass('open');
-                        $(this).find(ace.vars['.icon']).toggleClass(
-                                'fa-angle-double-down').toggleClass(
-                                'fa-angle-double-up');
-                    });
-            /***************/
-            $(document).ready(function() {
-                /*----------------------------------------------------------------
-                 * 키값 rowTag로 테이블의 기본 row 값의 Html태그 저장
-                -----------------------------------------------------------------*/
-                var rowTag = $("table tbody").html();
-                $(".simple-table").data("rowTag", rowTag); //키값 rowTag로 테이블의 기본 row 값의 Html태그 저장
-            });
-            /* ********************************************************
-             * 체크박스 현재행 삭제 기능 => 현재 에러남...
-             ******************************************************** */
-            function rowDelete(obj) {
-                $("tbody td input[type=checkbox] :checked").each(function() {
-                    $(this).parent().parent().remove()
-                });
-            }
-            //function rowDelete(obj) {
-            //  $(obj).parent().remove();
-            //}
-            /*  
-            function delete_row() {
-            var s_tbody = document.getElementById('store-tbody');
-            if (s_tbody.rows.length < 1) return;
-            // s_tbody.deleteRow(0); // 상단부터 삭제
-            s_tbody.deleteRow( s_tbody.rows.length-1 ); // 하단부터 삭제
-            }
-             */
-        })
-    </script>
+		jQuery(function($) {
+			//select/deselect all rows according to table header checkbox
+			var active_class = 'active';
+			$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on(
+					'click',
+					function() {
+						var th_checked = this.checked;//checkbox inside "TH" table header
+
+						$(this).closest('table').find('tbody > tr').each(
+								function() {
+									var row = this;
+									if (th_checked)
+										$(row).addClass(active_class).find(
+												'input[type=checkbox]').eq(0)
+												.prop('checked', true);
+									else
+										$(row).removeClass(active_class).find(
+												'input[type=checkbox]').eq(0)
+												.prop('checked', false);
+								});
+					});
+
+			//select/deselect a row when the checkbox is checked/unchecked
+			$('#simple-table').on('click', 'td input[type=checkbox]',
+					function() {
+						var $row = $(this).closest('tr');
+						if ($row.is('.detail-row '))
+							return;
+						if (this.checked)
+							$row.addClass(active_class);
+						else
+							$row.removeClass(active_class);
+					});
+
+			/********************************/
+			//add tooltip for small view action buttons in dropdown menu
+			$('[data-rel="tooltip"]').tooltip({
+				placement : tooltip_placement
+			});
+
+			//tooltip placement on right or left
+			function tooltip_placement(context, source) {
+				var $source = $(source);
+				var $parent = $source.closest('table')
+				var off1 = $parent.offset();
+				var w1 = $parent.width();
+
+				var off2 = $source.offset();
+				//var w2 = $source.width();
+
+				if (parseInt(off2.left) < parseInt(off1.left)
+						+ parseInt(w1 / 2))
+					return 'right';
+				return 'left';
+			}
+
+			/***************/
+			$('.show-details-btn').on(
+					'click',
+					function(e) {
+						e.preventDefault();
+						$(this).closest('tr').next().toggleClass('open');
+						$(this).find(ace.vars['.icon']).toggleClass(
+								'fa-angle-double-down').toggleClass(
+								'fa-angle-double-up');
+					});
+			/***************/
+
+			$(document).ready(function() {
+				/*----------------------------------------------------------------
+				 * 키값 rowTag로 테이블의 기본 row 값의 Html태그 저장
+				-----------------------------------------------------------------*/
+				var rowTag = $("table tbody").html();
+				$(".simple-table").data("rowTag", rowTag); //키값 rowTag로 테이블의 기본 row 값의 Html태그 저장
+			});
+			/* ********************************************************
+			 * 체크박스 현재행 삭제 기능 => 현재 에러남...
+			 ******************************************************** */
+
+			function delete(menuNo){
+				 location.href="../menu/delete?menuNo="+menuNo;
+			 }
+
+			/*  
+			function delete_row() {
+			var s_tbody = document.getElementById('store-tbody');
+			if (s_tbody.rows.length < 1) return;
+			// s_tbody.deleteRow(0); // 상단부터 삭제
+			s_tbody.deleteRow( s_tbody.rows.length-1 ); // 하단부터 삭제
+			}
+			 */
+
+		})
+	</script>
+
 </body>
 </html>
