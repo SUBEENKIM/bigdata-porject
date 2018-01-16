@@ -5,7 +5,7 @@
 
 <html lang="ko">
 <head>
-<title>IoT Control</title>
+<title>IoT 실내환경</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet"
@@ -17,11 +17,10 @@
 	class="ace-main-stylesheet" id="main-ace-style">
 <link rel="stylesheet"
 	href="${pageContext.servletContext.contextPath}/assets/css/iot_element.css" />
-<link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/assets/css/Footer-with-button-logo.css">
 
 <!-- Favicon and touch icons -->
-<link rel="icon" href="ico/home_iot.png">
+<link rel="icon"
+	href="${pageContext.servletContext.contextPath}/ico/home_iot.png">
 <style>
 .modal-dialog {
 	position: relative width:600px;
@@ -40,25 +39,10 @@
 <body class="subpage">
 
 	<!-- Header -->
-	<header id="header">
-		<div class="logo">
-			<a href="index.html">BIGDATA3 <span>by Donny</span></a>
-		</div>
-		<a href="#menu">Menu</a>
-	</header>
+	<jsp:include page="../header.jsp"></jsp:include>
 
 	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">메인</a></li>
-			<li><a href="loginmain.html">로그인</a></li>
-			<li><a href="mypage.html">마이페이지</a></li>
-			<li><a href="store_management.html">매장관리</a></li>
-			<li><a href="bigdatatest.html">빅데이터</a></li>
-			<li><a href="noticeboard.html">게시판</a></li>
-			<li><a href="index_admin.html">Admin Only</a></li>
-		</ul>
-	</nav>
+	<jsp:include page="../navi.jsp"></jsp:include>
 
 	<!-- Modal -->
 	<div class="container">
@@ -70,44 +54,14 @@
 					</div>
 
 					<div class="modal-body">
-						<div class="row">
-							<div class="form-group">
-								<label for="autoTemp">자동셋팅 온도설정</label>
-								<div>
-									<input type="text" id="autoTemp" name="autoTemp"
-										placeholder="예) 18도" value="" />
-								</div>
-							</div>
-
-							<div class="space-4"></div>
-
-							<div class="form-group">
-								<label for="storeNo">매장 넘버</label>
-								<div>
-									<input type="text" id="storeNo" name="storeNo"
-										placeholder="예) VIPS강남01" value="" />
-								</div>
-							</div>
-
-							<div class="space-4"></div>
-
-							<div class="form-group">
-								<label for="iotNo">기기 번호</label>
-								<div>
-									<input type="text" id="iotNo" name="iotNo"
-										placeholder="예) IoT-Temp01" value="" />
-								</div>
-							</div>
-						</div>
+						Some content to IoT Control <br /> <br /> 1 <br /> <br /> <br />
+						2 <br /> <br /> <br /> <br /> <br /> 3
 					</div>
 
 					<div class="modal-footer">
 						<button class="btn btn-sm btn-danger pull-right"
 							data-dismiss="modal">
 							<i class="ace-icon fa fa-times"></i> Close
-						</button>
-						<button class="btn btn-sm btn-success pull-right" type="submit">
-							<i class="ace-icon fa fa-floppy-o"></i> Save
 						</button>
 					</div>
 				</div>
@@ -160,10 +114,12 @@
 					<div class="3u 12u$(medium)">
 						<div class="box">
 							<p align="center">
-								<strong>김수빈</strong> 님 반갑습니다.
+								<strong>${loginBranchMaster.name}</strong> 님 반갑습니다.
 							</p>
-							<a href="loginmain.html" class="button special">로그인 페이지 이동</a> <a
-								href="#" class="button alt">로그 아웃</a>
+							<a
+								href="${pageContext.servletContext.contextPath}/loginmain.html"
+								class="button special">로그인 페이지 이동</a> <a href="#"
+								class="button alt">로그 아웃</a>
 						</div>
 						<div class="box">
 							<ul class="actions vertical">
@@ -203,13 +159,16 @@
 											<div id="collapse1" class="panel-collapse collapse">
 												<ul class="list-group">
 													<li class="list-group-item">기기 전원상태 <label> <input
-															name="switch-field-1" class="ace ace-switch ace-switch-3"
+															data-device="temperature" name="switch-temperature-1"
+															class="ace ace-switch ace-switch-3 iot-switch"
 															type="checkbox" /> <span class="lbl"></span>
+
 													</label></li>
 													<li class="list-group-item">Auto Setting 활성 <label>
-															<input name="switch-field-2"
-															class="ace ace-switch ace-switch-2" type="checkbox" /> <span
-															class="lbl"></span>
+															<input data-device="temperature_auto"
+															name="switch-temperature_auto-2"
+															class="ace ace-switch ace-switch-2 iot-switch"
+															type="checkbox" /> <span class="lbl"></span>
 													</label></li>
 													<li class="list-group-item">Auto Setting 설정온도 : 18도</li>
 												</ul>
@@ -217,7 +176,7 @@
 										</div>
 									</div>
 									<a href="#my-modal" class="button" role="button"
-										data-toggle="modal" style="background-color: crimson;">온도관리</a>
+										data-toggle="modal">온도관리</a>
 								</div>
 
 
@@ -254,8 +213,7 @@
 											</div>
 										</div>
 									</div>
-									<a href="#my-modal2" class="button" role="button"
-										data-toggle="modal" style="background-color: crimson;">습도관리</a>
+									<a href="#" class="button">습도관리</a>
 								</div>
 
 								<div class="col align-center">
@@ -295,8 +253,7 @@
 											</div>
 										</div>
 									</div>
-									<a href="#my-modal3" class="button" role="button"
-										data-toggle="modal" style="background-color: crimson;">미세먼지관리</a>
+									<a href="#" class="button">미세먼지관리</a>
 								</div>
 							</div>
 
@@ -308,56 +265,7 @@
 	</div>
 
 	<!-- Footer -->
-	<footer id="myFooter">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3">
-					<span class="image"><img
-						src="${pageContext.servletContext.contextPath}/images/bigdata02.jpg"
-						style="width: auto; height: auto; max-width: 170px; max-height: 160px;"
-						alt="" /></span>
-				</div>
-				<div class="col-sm-2">
-					<h5>Get started</h5>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="loginmain.html">Sign up</a></li>
-						<li><a href="error500.html">Downloads</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-2">
-					<h5>About us</h5>
-					<ul>
-						<li><a href="error404.html">Company Information</a></li>
-						<li><a href="https://aws.amazon.com/ko/">Technical
-								Cooperation</a></li>
-						<li><a href="error500.html">Reviews</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-2">
-					<h5>Support</h5>
-					<ul>
-						<li><a href="error404.html">FAQ</a></li>
-						<li><a href="mailto:higashi2002kr@gmail.com?Subject=관리자에게 문의">Help
-								desk</a></li>
-						<li><a href="noticeboard.html">Community</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-3">
-					<div class="social-networks">
-						<a href="#" class="facebook"><i class="fa fa-facebook"></i></a> <a
-							href="#" class="twitter"><i class="fa fa-twitter"></i></a> <a
-							href="https://github.com/Donny2002" class="github"><i
-							class="fa fa-github"></i></a>
-					</div>
-					<button type="button" class="btn btn-default">Contact us</button>
-				</div>
-			</div>
-		</div>
-		<div class="footer-copyright">
-			<p>© 2017 Copyright Bigdata3</p>
-		</div>
-	</footer>
+	<jsp:include page="../footer2.jsp"></jsp:include>
 
 	<script type="text/javascript"
 		src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -378,19 +286,15 @@
 	<script type="text/javascript">
 		jQuery(function($) {
 			$('.modal.aside').ace_aside();
-
 			$('#aside-inside-modal').addClass('aside').ace_aside({
 				container : '#my-modal > .modal-dialog'
 			});
-
 			//$('#top-menu').modal('show')
-
 			$(document).one('ajaxloadstart.page', function(e) {
 				//in ajax mode, remove before leaving page
 				$('.modal.aside').remove();
 				$(window).off('.aside')
 			});
-
 			//make content sliders resizable using jQuery UI (you should include jquery ui files)
 			//$('#right-menu > .modal-dialog').resizable({handles: "w", grid: [ 20, 0 ], minWidth: 200, maxWidth: 600});
 		})
