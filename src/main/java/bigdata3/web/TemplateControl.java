@@ -10,6 +10,10 @@ public class TemplateControl {
 	@RequestMapping("create")
 	public void form() {
 	}
+	
+	@RequestMapping("menuboard")
+	public void menuboard() {
+	}
 
 	
 }
