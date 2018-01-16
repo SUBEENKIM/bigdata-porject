@@ -7,11 +7,11 @@
 	<title>메뉴보드 Type1</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/menu_board.css" />
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+	<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/assets/css/menu_board.css" />
+	<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/assets/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/assets/css/fonts.googleapis.com.css" />
 	<!-- Favicon and touch icons -->
-	<link rel="icon" href="ico/home_iot.png">
+	<link rel="icon" href="${pageContext.servletContext.contextPath}/ico/home_iot.png">
 </head>
 <style>
 	body {
@@ -63,7 +63,7 @@
 
 						<div class="row">
 						<div class="6u 12u$(small)">
-							<span class="image fit"><img src="images/menu_board01.jpg" alt="" /></span>
+							<span class="image fit"><img src="${pageContext.servletContext.contextPath}/images/menu_board01.jpg" alt="" /></span>
 							</div>
 							<div class="6u$ 12u$(small)">
 							<h3>아보카도 스페셜 <span class="hit"> New!</span></h3>
@@ -85,13 +85,13 @@
 							</ul>
 							</div>
 						<div class="6u$ 12u$(small)">
-							<span class="image fit"><img src="images/menu_board02.jpg" alt="" /></span>
+							<span class="image fit"><img src="${pageContext.servletContext.contextPath}/images/menu_board02.jpg" alt="" /></span>
 							</div>
 						</div>
 
 						<div class="row">
 						<div class="6u 12u$(small)">
-							<span class="image fit"><img src="images/menu_board03.jpg" alt="" /></span>
+							<span class="image fit"><img src="${pageContext.servletContext.contextPath}/images/menu_board03.jpg" alt="" /></span>
 							</div>
 							<div class="6u$ 12u$(small)">
 							<h3>해물 필라프</h3>
@@ -107,7 +107,7 @@
 					<div class="6u 12u$(medium)">
 						<div class="row">
 						<div class="6u 12u$(small)">
-							<span class="image fit"><img src="images/menu_board04.jpg" alt="" /></span>
+							<span class="image fit"><img src="${pageContext.servletContext.contextPath}/images/menu_board04.jpg" alt="" /></span>
 							</div>
 							<div class="6u$ 12u$(small)">
 							<h3>뉴욕버거 세트 <span class="hit"> Hit!</span></h3>
@@ -129,13 +129,13 @@
 							</ul>
 							</div>
 						<div class="6u$ 12u$(small)">
-							<span class="image fit"><img src="images/menu_board05.jpg" alt="" /></span>
+							<span class="image fit"><img src="${pageContext.servletContext.contextPath}/images/menu_board05.jpg" alt="" /></span>
 							</div>
 						</div>
 
 						<div class="row">
 						<div class="6u 12u$(small)">
-							<span class="image fit"><img src="images/menu-board06.jpg" alt="" /></span>
+							<span class="image fit"><img src="${pageContext.servletContext.contextPath}/images/menu-board06.jpg" alt="" /></span>
 							</div>
 							<div class="6u$ 12u$(small)">
 							<h3>나폴리 피자</h3>
