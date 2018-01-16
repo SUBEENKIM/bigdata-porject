@@ -198,7 +198,8 @@
 												<h4 class="panel-title">
 													<!-- AWSIoT에 들어간 실내 온도 값-->
 													<a data-toggle="collapse" href="#collapse1">현재온도 : <span
-														id="temperature">${message.temperature}</span>
+														id="temperature">${message.temperature}</span></a>
+												</h4>
 											</div>
 											<div id="collapse1" class="panel-collapse collapse">
 												<ul class="list-group">
